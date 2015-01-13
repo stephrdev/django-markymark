@@ -1,0 +1,12 @@
+*.py[cod]
+.DS_Store
+.coverage
+.tox
+env/
+docs/build/
+.cache
+*.egg
+*.egg-info
+markymark/tests/static/
+htmlcov/
+dist/

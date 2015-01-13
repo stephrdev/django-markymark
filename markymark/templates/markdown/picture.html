@@ -1,0 +1,33 @@
+{% comment %}
+	This is the generic picture module to show pictures and it's caption.
+
+	required:
+	-	picture_scaled_url, set the scaled (non retina) image url
+	-	picture_url, sets the image url
+
+	optional:
+	-	picture_name, sets the alt text
+	-	picture_caption, sets the caption
+	-	picture_default_alt_text, sets the alternative text
+	-	attributes, additional attributes for the <img> tag
+{% endcomment %}
+{% load i18n %}
+
+
+<figure class="picture">
+	{% if picture_url %}
+		<img
+			src="{{ picture_scaled_url }}"
+			srcset="{{ picture_scaled_url }}, {{ picture_url }} 2x"
+			alt="{{ picture_default_alt_text|default:'' }}"
+			{% if attributes %}{{ attributes }}{% endif %} />
+		{% if picture_caption %}
+			<figcaption>
+				{# TODO: Add filter which strips everything without &shy; and <br />, <br/>, <br> instead of |safe #}
+				{{ picture_caption|safe }}
+			</figcaption>
+		{% endif %}
+	{% else %}
+		<p>{% trans 'Missing picture' %}</p>
+	{% endif %}
+</figure>

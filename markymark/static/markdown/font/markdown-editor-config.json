@@ -1,0 +1,76 @@
+{
+	"name": "",
+	"css_prefix_text": "icon-",
+	"css_use_suffix": false,
+	"hinting": true,
+	"units_per_em": 1000,
+	"ascent": 850,
+	"glyphs": [
+		{
+			"uid": "9dd9e835aebe1060ba7190ad2b2ed951",
+			"css": "search",
+			"code": 59400,
+			"src": "fontawesome"
+		},
+		{
+			"uid": "381da2c2f7fd51f8de877c044d7f439d",
+			"css": "picture",
+			"code": 59395,
+			"src": "fontawesome"
+		},
+		{
+			"uid": "861ab06e455e2de3232ebef67d60d708",
+			"css": "minus",
+			"code": 59401,
+			"src": "fontawesome"
+		},
+		{
+			"uid": "85528017f1e6053b2253785c31047f44",
+			"css": "comment",
+			"code": 59399,
+			"src": "fontawesome"
+		},
+		{
+			"uid": "02cca871bb69da75e8ee286b7055832c",
+			"css": "bold",
+			"code": 59392,
+			"src": "fontawesome"
+		},
+		{
+			"uid": "a8cb1c217f02b073db3670c061cc54d2",
+			"css": "italic",
+			"code": 59393,
+			"src": "fontawesome"
+		},
+		{
+			"uid": "0c708edd8fae2376b3370aa56d40cf9e",
+			"css": "header",
+			"code": 59394,
+			"src": "fontawesome"
+		},
+		{
+			"uid": "a2a74f5e7b7d9ba054897d8c795a326a",
+			"css": "list-bullet",
+			"code": 59396,
+			"src": "fontawesome"
+		},
+		{
+			"uid": "f6766a8b042c2453a4e153af03294383",
+			"css": "list-numbered",
+			"code": 59397,
+			"src": "fontawesome"
+		},
+		{
+			"uid": "823a9e02e643318116fea40a00190e4e",
+			"css": "asterisk",
+			"code": 59398,
+			"src": "fontawesome"
+		},
+		{
+			"uid": "7432077e6a2d6aa19984ca821bb6bbda",
+			"css": "bug",
+			"code": 59402,
+			"src": "fontawesome"
+		}
+	]
+}

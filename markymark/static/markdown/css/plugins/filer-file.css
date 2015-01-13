@@ -1,0 +1,77 @@
+.filer-file-overlay,
+.filer-file-container,
+.filer-file-header,
+.filer-file-image,
+.filer-file-type,
+.filer-file-position,
+.filer-file-close,
+.filer-file-submit {
+	box-sizing: border-box;
+}
+
+.filer-file-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.filer-file-overlay select {
+	display: block;
+	float: left;
+	width: 48%;
+}
+
+.filer-file-container {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 400px;
+	height: 480px;
+	padding: 25px;
+	margin-left: -200px;
+	margin-top: -262px;
+	background-color: #fff;
+	border: solid 1px #000;
+	borde-radius: 3px;
+}
+
+.filer-file-header {
+	margin: -25px -25px 25px -25px;
+	padding: 10px 25px;
+	background-color: #efefef;
+}
+
+.filer-file-header a {
+	float: right;
+}
+
+.filer-file-image {
+	display: block;
+	width: 100%;
+	height: 348px;
+	line-height: 348px;
+	text-align: center;
+	margin: 25px 0;
+	border: solid 1px #ccc;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	cursor: pointer;
+	background-size: cover;
+}
+
+.filer-file-image.has-image {
+	text-indent: -9999px;
+}
+
+select.filer-file-position {
+	float: right;
+}
+
+.filer-file-submit {
+	display: block;
+	clear: both;
+	width: 100%;
+}

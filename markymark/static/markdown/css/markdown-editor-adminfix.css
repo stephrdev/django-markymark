@@ -1,0 +1,12 @@
+.md-editor {
+	margin-left: 10em;
+	width: 640px;
+}
+.wide .md-editor {
+	margin-left: 17.4em;
+}
+.md-editor .md-preview p {
+	margin: inherit;
+	padding: inherit;
+	font-size: 14px;
+}
