@@ -9,4 +9,7 @@ class MarkdownView(FormView):
     template_name = 'example.html'
 
     def form_valid(self, form):
-        return self.render_to_response(self.context, {})
+        return self.render_to_response({
+            'form': form,
+            'content': form.cleaned_data['content']
+        })

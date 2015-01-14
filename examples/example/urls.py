@@ -4,5 +4,5 @@ from app.views import MarkdownView
 
 
 urlpatterns = patterns('',
-    url(r'^$', MarkdownView.as_view()),
+    url(r'^$', MarkdownView.as_view(), name='markdown'),
 )

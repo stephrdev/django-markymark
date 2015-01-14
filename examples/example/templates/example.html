@@ -1,1 +1,43 @@
-{{ form.as_p }}
+{% load static markup %}
+<!DOCTYPE html>
+    <head>
+        <title>Markdown Example</title>
+        <link rel="stylesheet" type="text/css" href="{% static "codehilite.css" %}">
+
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background: #fff;
+                font-family: "Helvetica Neue", "Arial";
+            }
+
+            #main-wrapper {
+                width: 960px;
+                margin: 0 auto;
+            }
+
+            #id_content {
+                width: 100%;
+                height: 400px;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="main-wrapper">
+            <div id="form-wrapper">
+                <form action="{% url 'markdown' %}" method="post">
+                    {% csrf_token %}
+                    {{ form }}
+                    <input type="submit" value="Submit" />
+                </form>
+            </div>
+            <div id="content-wrapper">
+                {% if content %}
+                    {{ content|markdown }}
+                {% endif %}
+            </div>
+        </div>
+    </body>
+</html>
