@@ -17,9 +17,12 @@ DATABASES = {
 MIDDLEWARE_CLASSES = []
 
 INSTALLED_APPS = (
+    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
 
+    'floppyforms',
+    'anylink',
     'easy_thumbnails',
     'filer',
 )
@@ -30,3 +33,7 @@ TEMPLATE_DIRS = (
 
 STATIC_URL = '/'
 MEDIA_URL = '/'
+
+ANYLINK_EXTENSIONS = (
+    'anylink.extensions.ExternalLink',
+)

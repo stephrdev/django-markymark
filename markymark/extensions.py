@@ -58,15 +58,12 @@ class LinkPostprocessor(markdown.postprocessors.Postprocessor):
             options = match.groupdict()
             try:
                 link = AnyLink.objects.get(pk=int(options['id']))
-
                 return match.group(0).replace(
                     match.group(1),
-                    render_to_string('markdown/link.html', {
-                        'link': link,
-                    })
+                    render_to_string('markdown/link.html', {'link': link})
                 )
 
-            except (KeyError, File.DoesNotExist):
+            except (KeyError, AnyLink.DoesNotExist):
                 if settings.DEBUG:
                     raise
 

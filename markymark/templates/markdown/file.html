@@ -1,6 +1,6 @@
 {% spaceless %}
 {% if file.file_type == 'Image' %}
-    <img src="{{ file.scaled_image_url }}"/>
+    <img src="{{ file.url }}"/>
 {% elif file.file_type == 'File' %}
     <a href="{{ file.url }}">{{ file.url }}</a>
 {% else %}
