@@ -6,7 +6,6 @@ from markymark.fields import MarkdownField
 
 class Post(models.Model):
 
-    title = models.CharField(_('Title'), max_length=255)
     content = MarkdownField(_('Content'))
 
     class Meta:
@@ -14,4 +13,4 @@ class Post(models.Model):
         verbose_name_plural = _('Posts')
 
     def __unicode__(self):
-        return self.title[:15]
+        return u'{0}'.format(self.id)

@@ -1,8 +1,9 @@
-from markymark.fields import MarkdownFormField
+from markymark.fields import MarkdownField, MarkdownFormField
 from markymark.widgets import MarkdownTextarea
 
 
 def test_markdownfield_formfield():
-    field = MarkdownFormField()
-    assert isinstance(field, MarkdownFormField)
-    assert isinstance(field.widget, MarkdownTextarea)
+    field = MarkdownField()
+    form_field = field.formfield()
+    assert isinstance(form_field, MarkdownFormField)
+    assert isinstance(form_field.widget, MarkdownTextarea)
