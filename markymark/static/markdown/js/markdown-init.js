@@ -12,7 +12,7 @@
 		}
 
 		$el.markdown({
-			hiddenButtons: ['cmdImage', 'cmdQuote', 'cmdCode', 'cmdUrl'],
+			hiddenButtons: ['cmdImage', 'cmdQuote', 'cmdUrl'],
 			reorderButtonGroups: ['groupFont', 'groupMisc', 'groupUtil', 'groupPlugins'],
 			resize: true,
 			rows: 10,
