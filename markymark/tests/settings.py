@@ -1,4 +1,5 @@
 import os
+import tempfile
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 
@@ -37,3 +38,5 @@ MEDIA_URL = '/'
 ANYLINK_EXTENSIONS = (
     'anylink.extensions.ExternalLink',
 )
+
+MEDIA_ROOT = tempfile.mkdtemp()
