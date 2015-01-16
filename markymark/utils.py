@@ -1,17 +1,10 @@
 import markdown
 
+from django.conf import settings
 from django.utils.encoding import force_text
-
-from .extensions import FilerFileExtension, LinkExtension
 
 
 def render_markdown(value, extensions=''):
     extensions = [e.strip() for e in extensions.split(',') if e]
-
-    extensions.append(LinkExtension())
-    extensions.append(FilerFileExtension())
-    extensions.append('markdown.extensions.codehilite')
-
-    return markdown.markdown(
-        force_text(value),
-        extensions)
+    [extensions.append(module) for module in settings.MARKYMARK_EXTENSIONS]
+    return markdown.markdown(force_text(value), extensions)

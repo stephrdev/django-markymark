@@ -40,3 +40,8 @@ ANYLINK_EXTENSIONS = (
 )
 
 MEDIA_ROOT = tempfile.mkdtemp()
+
+MARKYMARK_EXTENSIONS = [
+    'markymark.extensions:LinkExtension',
+    'markymark.extensions:FilerFileExtension',
+]

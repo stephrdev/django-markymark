@@ -81,3 +81,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 TEST_RUNNER = ''
+
+MARKYMARK_EXTENSIONS = [
+    'markymark.extensions:LinkExtension',
+    'markymark.extensions:FilerFileExtension',
+    'markdown.extensions.codehilite',
+]

@@ -11,19 +11,19 @@ class TestMarkdownFilter:
     )
 
     def test_without_safe_extension(self):
-        retval = markdown_filter(self.teststring)
-        assert retval == (
+        expected = markdown_filter(self.teststring)
+        assert expected == (
             '<p>Test 123\n'
             '<strong>Test</strong>\n'
             '<em>foo</em></p>'
         )
-        assert type(retval) is SafeText
+        assert type(expected) is SafeText
 
     def test_without_safe_extension_and_other(self):
-        retval = markdown_filter(self.teststring, 'nl2br')
-        assert retval == (
+        expected = markdown_filter(self.teststring, 'nl2br')
+        assert expected == (
             '<p>Test 123<br />\n'
             '<strong>Test</strong><br />\n'
             '<em>foo</em></p>'
         )
-        assert type(retval) is SafeText
+        assert type(expected) is SafeText
