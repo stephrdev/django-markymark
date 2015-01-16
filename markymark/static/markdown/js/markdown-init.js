@@ -19,10 +19,8 @@
 		});
 	};
 
-
-	$(document)
-		.ready(function() {
-			$('textarea[data-provide="init-markdown"]').each(initMarkdown);
-		});
+	$(document).ready(function() {
+		$('textarea[data-provide="init-markdown"]').each(initMarkdown);
+	});
 
 })(window.jQuery || window.django.jQuery);
