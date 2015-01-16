@@ -13,6 +13,7 @@ for extra markdown features, can be installed using module paths.
     MARKYMARK_EXTENSIONS = [
         '..',
         'markdown.extensions.codehilite',
+        'markdown.extensions.fenced_code',
     ]
 
 
@@ -35,7 +36,7 @@ The following needs to be added to the settings:
         'markdown/js/plugins/anylink-link.js',
     ]
 
-For this extension additional settings are required in the documentation of `django-anylink <http://django-anylink.readthedocs.org/en/latest/configuration.html>`_
+For this extension additional settings are required that can be found in the `django-anylink documentation <http://django-anylink.readthedocs.org/en/latest/configuration.html>`_
 
 
 Django-filer
@@ -62,4 +63,4 @@ The following needs to be added to the settings:
         'markdown/js/plugins/filer-file.js',
     ]
 
-For this extension additional settings are required in the documentation of `django-filer <http://django-filer.readthedocs.org/en/latest/settings.html>`_
+For this extension additional settings are required that can be found in the `django-filer documentation <http://django-filer.readthedocs.org/en/latest/settings.html>`_

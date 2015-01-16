@@ -86,6 +86,7 @@ MARKYMARK_EXTENSIONS = [
     'markymark.extensions:LinkExtension',
     'markymark.extensions:FilerFileExtension',
     'markdown.extensions.codehilite',
+    'markdown.extensions.fenced_code',
 ]
 
 MARKYMARK_CSS = [
