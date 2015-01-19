@@ -8,6 +8,11 @@ from filer.models.filemodels import File
 
 FILE_RE = re.compile(r'(\[file\:(?P<id>\d+)\])', re.IGNORECASE)
 LINK_RE = re.compile(r'(\[link\:(?P<id>\d+)\])', re.IGNORECASE)
+AUTOLINK_RE = re.compile((
+    r'(https?|ftps?|file|ssh|mms|svn(?:\+ssh)?|git|dict|nntp|irc|'
+    r'rsync|smb|apt|mailto|telnet|s?news|sips?|skype|apt)'
+    r'(://[-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|])'
+))
 
 
 class FilerFileExtension(markdown.Extension):
@@ -68,3 +73,16 @@ class LinkPostprocessor(markdown.postprocessors.Postprocessor):
                     raise
 
         return LINK_RE.sub(re_callback, text)
+
+
+class AutoLinkPostprocessor(markdown.postprocessors.Postprocessor):
+
+    def run(self, text):
+        def re_callback(match):
+            return render_to_string('markdown/autolink.html', {'url': match.group()})
+        return AUTOLINK_RE.sub(re_callback, text)
+
+
+class AutoLinkExtension(markdown.Extension):
+    def extendMarkdown(self, md, md_globals):
+        md.postprocessors.add('autolink', AutoLinkPostprocessor(md), '_end')

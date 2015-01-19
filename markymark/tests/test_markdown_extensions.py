@@ -1,5 +1,3 @@
-import re
-
 from anylink.models import AnyLink
 import pytest
 from filer.models.filemodels import File
@@ -29,13 +27,11 @@ class TestFilerFileExtension:
 
     def test_file_render_success(self):
         expected = '<p><a href="{0}">{0}</a></p>'.format(self.file.url)
-        assert re.match(
-            expected, markdown_filter('[file:{0}]'.format(self.file.pk)))
+        assert expected == markdown_filter('[file:{0}]'.format(self.file.pk))
 
     def test_image_render_success(self):
         expected = '<p><img src="{0}"/></p>'.format(self.image.url)
-        assert re.match(
-            expected, markdown_filter('[file:{0}]'.format(self.image.pk)))
+        assert expected == markdown_filter('[file:{0}]'.format(self.image.pk))
 
 
 @pytest.mark.django_db
@@ -59,5 +55,22 @@ class TestLinkExtension:
     def test_file_render_success(self):
         expected = '<p><a href="{0}" title="" target="_self"></a></p>'.format(
             self.link.external_url)
-        assert re.match(
-            expected, markdown_filter('[link:{0}]'.format(self.link.pk)))
+        assert expected == markdown_filter('[link:{0}]'.format(self.link.pk))
+
+
+class TestAutoLinkExtension:
+
+    def test_valid_http_link(self):
+        url = 'https://www.youtube.com/watch?v=FTuFVwnrcts'
+        expected = '<p><a href="{0}">{0}</a></p>'.format(url)
+        assert expected == markdown_filter(url)
+
+    def test_valid_mailto_link(self):
+        url = 'mailto://info@moccu.com'
+        expected = '<p><a href="{0}">{0}</a></p>'.format(url)
+        assert expected == markdown_filter(url)
+
+    def test_invalid_link(self):
+        url = 'www.moccu.com'
+        expected = '<p>{0}</p>'.format(url)
+        assert expected == markdown_filter(url)
