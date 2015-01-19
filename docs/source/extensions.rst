@@ -64,3 +64,26 @@ The following needs to be added to the settings:
     ]
 
 For this extension additional settings are required that can be found in the `django-filer documentation <http://django-filer.readthedocs.org/en/latest/settings.html>`_
+
+
+
+Autolink (GFM)
+--------------
+
+An extension to automatically create anchor tags from urls.
+
+The following needs to be added to the settings:
+
+.. code-block:: python
+
+    MARKYMARK_EXTENSIONS = [
+        '..',
+        'markymark.extensions:AutoLinkExtension',
+    ]
+
+
+Example input/output:
+
+.. code-block:: HTML
+
+    http://www.moccu.com will turn into <a href="http://www.moccu.com">http://www.moccu.com</a>
