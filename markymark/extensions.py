@@ -22,11 +22,11 @@ class FilerFileExtension(markdown.Extension):
 
 class FilerFilePostprocessor(markdown.postprocessors.Postprocessor):
     """
-    Image markdown extension for django-filer + easy_thumbnails
+    File markdown extension for django-filer for files and images.
 
     Usage:
 
-      [image:id type:full pos:left|right]
+      [file:id type:full pos:left|right]
 
     Position `pos` is optional.
     """
@@ -36,7 +36,6 @@ class FilerFilePostprocessor(markdown.postprocessors.Postprocessor):
             options = match.groupdict()
             try:
                 file = File.objects.get(pk=int(options['id']))
-
                 return render_to_string('markdown/file.html', {
                     'file': file.get_real_instance(),
                 })

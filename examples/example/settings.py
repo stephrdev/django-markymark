@@ -35,6 +35,9 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
+MEDIA_ROOT = os.path.join(ROOT_DIR, 'web', 'media')
+MEDIA_URL = '/media/'
+
 SECRET_KEY = 'test'
 
 TEMPLATE_LOADERS = (
@@ -68,6 +71,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'floppyforms',
+    'anylink',
+    'easy_thumbnails',
+    'filer',
     'markymark',
     'example.app',
 )
@@ -83,6 +89,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 TEST_RUNNER = ''
 
 MARKYMARK_EXTENSIONS = [
+    'markymark.extensions:AutoLinkExtension',
     'markymark.extensions:LinkExtension',
     'markymark.extensions:FilerFileExtension',
     'markdown.extensions.codehilite',
@@ -103,3 +110,18 @@ MARKYMARK_JS = [
     'markdown/js/plugins/anylink-link.js',
     'markdown/js/plugins/filer-file.js',
 ]
+
+ANYLINK_EXTENSIONS = (
+    'anylink.extensions.ExternalLink',
+)
+
+FILER_FILE_MODELS = (
+    'filer.models.imagemodels.Image',
+    'filer.models.filemodels.File',
+)
+
+THUMBNAIL_PROCESSORS = (
+    'easy_thumbnails.processors.colorspace',
+    'filer.thumbnail_processors.scale_and_crop_with_subject_location',
+    'easy_thumbnails.processors.filters',
+)

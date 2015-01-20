@@ -67,10 +67,10 @@ For this extension additional settings are required that can be found in the `dj
 
 
 
-Autolink (GFM)
---------------
+Autolink
+--------
 
-An extension to automatically create anchor tags from urls.
+An extension to automatically create anchor tags from urls inspired by Github Flavored Markdown.
 
 The following needs to be added to the settings:
 
@@ -80,6 +80,9 @@ The following needs to be added to the settings:
         '..',
         'markymark.extensions:AutoLinkExtension',
     ]
+
+.. note::
+    If you combine the ``AutoLinkExtension`` together with ``LinkExtension``, then make sure that the ``AutoLinkExtension`` is listed before in ``MARKYMARK_EXTENSIONS``.
 
 
 Example input/output:

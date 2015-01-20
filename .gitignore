@@ -10,3 +10,4 @@ docs/build/
 markymark/tests/static/
 htmlcov/
 dist/
+examples/example/web/
