@@ -18,10 +18,12 @@ test_class:
 	py.test $(path)
 
 coverage:
-	py.test --cov=${COV} --cov-report=term-missing ${OPTS} ${APP}
+	coverage run `which py.test` ${OPTS} ${APP}
+	coverage report -m --include=${COV}* --omit='*/tests*'
 
 coverage-html:
-	py.test --cov=${COV} --cov-report=html ${OPTS} ${APP}
+	coverage run `which py.test` ${OPTS} ${APP}
+	coverage html -d htmlcov --include=${COV}* --omit='*/tests*'
 
 devinstall:
 	pip install -e .
