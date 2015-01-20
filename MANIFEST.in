@@ -3,3 +3,8 @@ include LICENSE.txt
 include Makefile
 include pytest.ini
 recursive-include docs *
+recursive-include markymark/static *
+recursive-include markymark/templates *
+
+global-exclude *.pyc
+global-exclude .DS_Store

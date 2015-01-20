@@ -8,6 +8,7 @@ install_requirements = [
     'markdown==2.5.2',
     'django-filer==0.9.8',
     'django-floppyforms==1.3.0',
+    'django-anylink==0.1.0',
 ]
 
 
