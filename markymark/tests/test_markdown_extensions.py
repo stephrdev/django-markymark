@@ -30,7 +30,8 @@ class TestFilerFileExtension:
         assert expected == markdown_filter('[file:{0}]'.format(self.file.pk))
 
     def test_image_render_success(self):
-        expected = '<p><img src="{0}"/></p>'.format(self.image.url)
+        expected = '<p><img src="{0}" alt="{1}" title="{2}"></p>'.format(
+            self.image.url, self.image.default_alt_text, self.image.default_caption)
         assert expected == markdown_filter('[file:{0}]'.format(self.image.pk))
 
 

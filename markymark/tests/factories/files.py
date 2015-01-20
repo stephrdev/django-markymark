@@ -16,3 +16,5 @@ class ImageFactory(factory.DjangoModelFactory):
 
     original_filename = 'test.jpg'
     file = factory.django.ImageField(filename='test.jpg', color='blue')
+    default_alt_text = 'test alt text'
+    default_caption = 'test caption'
