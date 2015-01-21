@@ -27,13 +27,12 @@ coverage-html:
 
 devinstall:
 	pip install -e .
-	pip install -e .[docs]
 	pip install -e .[tests]
-	pip install -e .[dev]
+	pip install -r requirements-docs.txt
 
 docs: clean-build
 	pip install -e .
-	pip install -e .[docs]
+	pip install -r requirements-docs.txt
 	sphinx-apidoc --force -o docs/source/modules/ markymark markymark/settings.py tests/
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html

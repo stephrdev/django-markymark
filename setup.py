@@ -30,12 +30,6 @@ test_requirements = [
 ]
 
 
-doc_requirements = [
-    'sphinx',
-    'sphinx_rtd_theme',
-]
-
-
 def read(*parts):
     filename = os.path.join(os.path.dirname(__file__), *parts)
     with codecs.open(filename, encoding='utf-8') as fp:
@@ -53,7 +47,6 @@ setup(
     packages=find_packages(),
     install_requires=install_requirements,
     extras_require={
-        'docs': doc_requirements,
         'tests': test_requirements,
     },
     include_package_data=True,
