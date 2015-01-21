@@ -1,5 +1,5 @@
 .PHONY: tests coverage coverage-html devinstall tox docs clean
-APP=.
+APP=markymark
 COV=markymark
 OPTS=
 
