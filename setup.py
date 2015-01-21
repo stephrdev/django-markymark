@@ -3,6 +3,12 @@ import os
 from setuptools import setup, find_packages
 
 
+def read(*parts):
+    filename = os.path.join(os.path.dirname(__file__), *parts)
+    with codecs.open(filename, encoding='utf-8') as fp:
+        return fp.read()
+
+
 install_requirements = [
     'django>=1.5',
     'markdown==2.5.2',
@@ -30,12 +36,6 @@ test_requirements = [
 ]
 
 
-def read(*parts):
-    filename = os.path.join(os.path.dirname(__file__), *parts)
-    with codecs.open(filename, encoding='utf-8') as fp:
-        return fp.read()
-
-
 setup(
     name='django-markymark',
     version='0.1',
@@ -43,8 +43,11 @@ setup(
     long_description=read('README.md'),
     author='Moccu GmbH & Co. KG',
     author_email='info@moccu.com',
-    url='',
-    packages=find_packages(),
+    url='https://github.com/moccu/django-markymark/',
+    packages=find_packages(exclude=[
+        'markymark.tests',
+        'examples',
+    ]),
     install_requires=install_requirements,
     extras_require={
         'tests': test_requirements,
@@ -54,9 +57,19 @@ setup(
     keywords=['markdown', 'django'],
     classifiers=[
         'Development Status :: 4 - Beta',
-        'License :: OSI Approved :: MIT License',
+        'Environment :: Web Environment',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: Apache License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python :: 2.7',
         'Topic :: Software Development :: Libraries :: Python Modules'
+        'Framework :: Django',
+        'Programming Language :: Python',
+        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3',
+        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: Implementation :: PyPy',
+        'Programming Language :: Python :: Implementation :: CPython',
     ],
+    zip_safe=False,
 )
