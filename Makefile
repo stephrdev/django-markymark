@@ -31,13 +31,16 @@ devinstall:
 	pip install -e .[tests]
 	pip install -e .[dev]
 
-docs: clean
-	sphinx-apidoc --force -o docs/modules/ markymark
+docs: clean-build
+	pip install -e .
+	pip install -e .[docs]
+	sphinx-apidoc --force -o docs/source/modules/ markymark markymark/settings.py tests/
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 
-clean:
-	rm -fr build/
-	rm -fr dist/
-	rm -fr htmlcov/
+clean-build:
+	@rm -fr build/
+	@rm -fr dist/
+	@rm -fr *.egg-info src/*.egg-info
+	@rm -fr htmlcov/
 	$(MAKE) -C docs clean
