@@ -6,7 +6,7 @@ from setuptools import setup, find_packages
 install_requirements = [
     'django>=1.5',
     'markdown==2.5.2',
-    'django-filer==0.9.8',
+    'django-filer==0.9.9',
     'django-floppyforms==1.3.0',
     'django-anylink==0.1.0',
 ]
