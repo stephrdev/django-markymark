@@ -40,7 +40,7 @@ setup(
     name='django-markymark',
     version='0.1',
     description='',
-    long_description=read('README.md'),
+    long_description=read('README.rst'),
     author='Moccu GmbH & Co. KG',
     author_email='info@moccu.com',
     url='https://github.com/moccu/django-markymark/',
