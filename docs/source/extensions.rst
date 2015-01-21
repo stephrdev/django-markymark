@@ -70,7 +70,7 @@ For this extension additional settings are required that can be found in the `dj
 Autolink
 --------
 
-An extension to automatically create anchor tags from urls inspired by Github Flavored Markdown.
+An extension to automatically create anchor tags from urls inspired by `Github Flavored Markdown <https://help.github.com/articles/github-flavored-markdown/>`_.
 
 The following needs to be added to the settings:
 
