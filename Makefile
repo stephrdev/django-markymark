@@ -39,6 +39,5 @@ docs: clean
 clean:
 	rm -fr build/
 	rm -fr dist/
-	rm -fr *.egg-info
 	rm -fr htmlcov/
 	$(MAKE) -C docs clean
