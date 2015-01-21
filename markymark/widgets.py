@@ -1,12 +1,12 @@
-from django.conf import settings
-
 import floppyforms.__future__ as forms
+
+from markymark import conf
 
 
 class MarkdownTextarea(forms.Textarea):
     class Media:
-        css = {'all': settings.MARKYMARK_CSS}
-        js = settings.MARKYMARK_JS
+        css = {'all': conf.MARKYMARK_CSS}
+        js = conf.MARKYMARK_JS
 
     def __init__(self, *args, **kwargs):
         super(MarkdownTextarea, self).__init__(*args, **kwargs)
