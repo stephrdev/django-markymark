@@ -33,7 +33,7 @@ devinstall:
 docs: clean-build
 	pip install -e .
 	pip install -r requirements-docs.txt
-	sphinx-apidoc --force -o docs/source/modules/ markymark markymark/settings.py tests/
+	sphinx-apidoc --force -o docs/source/modules/ markymark markymark/settings.py markymark/tests/
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 
