@@ -89,4 +89,4 @@ Example input/output:
 
 .. code-block:: HTML
 
-    http://www.moccu.com will turn into <a href="http://www.moccu.com">http://www.moccu.com</a>
+    http://www.example.com will turn into <a href="http://www.example.com">http://www.example.com</a>
