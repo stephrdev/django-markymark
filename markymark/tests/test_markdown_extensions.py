@@ -67,11 +67,11 @@ class TestAutoLinkExtension:
         assert expected == markdown_filter(url)
 
     def test_valid_mailto_link(self):
-        url = 'mailto://info@moccu.com'
+        url = 'mailto://test@example.com'
         expected = '<p><a href="{0}">{0}</a></p>'.format(url)
         assert expected == markdown_filter(url)
 
     def test_invalid_link(self):
-        url = 'www.moccu.com'
+        url = 'www.example.com'
         expected = '<p>{0}</p>'.format(url)
         assert expected == markdown_filter(url)
