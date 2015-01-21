@@ -57,8 +57,8 @@ setup(
         'tests': test_requirements,
     },
     include_package_data=True,
-    license='MIT',
-    keywords='django static html',
+    license='Apache License (2.0)',
+    keywords=['markdown', 'django'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'License :: OSI Approved :: MIT License',
