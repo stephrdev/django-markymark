@@ -7,7 +7,6 @@ Subpackages
 .. toctree::
 
     markymark.templatetags
-    markymark.tests
 
 Submodules
 ----------
