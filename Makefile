@@ -14,9 +14,6 @@ help:
 tests:
 	py.test ${OPTS} ${APP}
 
-test_class:
-	py.test $(path)
-
 coverage:
 	coverage run `which py.test` ${OPTS} ${APP}
 	coverage report -m --include=${COV}* --omit='*/tests*'
