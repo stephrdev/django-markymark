@@ -5,7 +5,6 @@ django-markymark
 provides few extensions for Django Apps to integrate dynamic content in markdown.
 
 .. figure:: https://django-markymark.readthedocs.org/en/latest/_static/marky.gif
-   :align: right
 
 
 Documentation
