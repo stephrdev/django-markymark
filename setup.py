@@ -1,5 +1,5 @@
-import codecs
 import os
+import codecs
 from setuptools import setup, find_packages
 
 
@@ -47,6 +47,8 @@ setup(
     packages=find_packages(exclude=[
         'markymark.tests',
         'examples',
+        'examples.example',
+        'examples.example.app',
     ]),
     install_requires=install_requirements,
     extras_require={
