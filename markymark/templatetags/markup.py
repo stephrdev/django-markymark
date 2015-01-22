@@ -3,6 +3,7 @@ from django.utils.safestring import mark_safe
 
 from markymark.utils import render_markdown
 
+
 register = template.Library()
 
 

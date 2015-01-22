@@ -1,5 +1,4 @@
 import markdown
-
 from django.utils.encoding import force_text
 
 from markymark import conf

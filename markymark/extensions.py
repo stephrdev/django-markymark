@@ -1,6 +1,6 @@
-import markdown
 import re
 
+import markdown
 from django.conf import settings
 from django.template.loader import render_to_string
 from filer.models.filemodels import File
