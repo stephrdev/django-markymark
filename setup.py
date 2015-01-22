@@ -4,6 +4,9 @@ import codecs
 from setuptools import setup, find_packages
 
 
+version = '0.1'
+
+
 if sys.argv[-1] == 'publish':
     os.system('python setup.py sdist upload')
     os.system('python setup.py bdist_wheel upload')
@@ -48,7 +51,7 @@ test_requirements = [
 
 setup(
     name='django-markymark',
-    version='0.1',
+    version=version,
     description='',
     long_description=read('README.rst'),
     author='Moccu GmbH & Co. KG',
