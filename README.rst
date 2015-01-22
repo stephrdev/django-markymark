@@ -4,7 +4,8 @@ django-markymark
 *django-markymark* is a Django library to make markdown in the Django Admin site easier and also
 provides few extensions for Django Apps to integrate dynamic content in markdown.
 
-.. figure:: https://django-markymark.readthedocs.org/en/latest/_static/marky.gif
+.. figure:: https://django-markymark.readthedocs.org/en/latest/_static/logo.gif
+   :align: right
 
 
 Documentation
