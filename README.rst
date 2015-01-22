@@ -13,7 +13,7 @@ django-markymark
 *django-markymark* provides helpers and tools to integrate markdown into your editor.
 
 .. figure:: https://django-markymark.readthedocs.org/en/latest/_static/logo.gif
-   :align: right
+   :align: left
 
 
 Features
