@@ -10,7 +10,7 @@ def read(*parts):
 
 
 install_requirements = [
-    'django>=1.5',
+    'django>=1.6',
     'markdown==2.5.2',
     'django-filer==0.9.9',
     'django-floppyforms==1.3.0',
@@ -68,7 +68,6 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: Implementation :: PyPy',
         'Programming Language :: Python :: Implementation :: CPython',
     ],
     zip_safe=False,
