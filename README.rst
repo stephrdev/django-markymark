@@ -28,6 +28,6 @@ Features
 Resources
 =========
 
-* `Documentation <<https://django-markymark.readthedocs.org/>`_
+* `Documentation <https://django-markymark.readthedocs.org/>`_
 * `Bug Tracker <https://github.com/moccu/django-markymark/issues>`_
 * `Code <https://github.com/moccu/django-markymark/>`_
