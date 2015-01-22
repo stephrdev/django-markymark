@@ -52,7 +52,9 @@ test_requirements = [
 setup(
     name='django-markymark',
     version=version,
-    description='',
+    description=(
+        'django-markymark provides helpers and tools to integrate markdown '
+        'into your editor.'),
     long_description=read('README.rst'),
     author='Moccu GmbH & Co. KG',
     author_email='info@moccu.com',
