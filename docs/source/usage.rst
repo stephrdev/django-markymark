@@ -23,7 +23,7 @@ To display the rendered markdown in your template.
 
 .. code-block:: HTML
 
-    {% load markup %}
+    {% load markymark %}
 
     {{ obj.content|markdown }}
 

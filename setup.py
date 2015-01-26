@@ -25,9 +25,7 @@ def read(*parts):
 install_requirements = [
     'django>=1.6',
     'markdown==2.5.2',
-    'django-filer==0.9.9',
     'django-floppyforms==1.3.0',
-    'django-anylink==0.1.0',
 ]
 
 
@@ -45,7 +43,9 @@ test_requirements = [
     'execnet==1.2.0',
     'pep8==1.5.7',
     'mock==1.0.1',
-    'factory_boy==2.4.1'
+    'factory_boy==2.4.1',
+    'django-filer==0.9.9',
+    'django-anylink==0.1.0',
 ]
 
 
@@ -68,6 +68,8 @@ setup(
     install_requires=install_requirements,
     extras_require={
         'tests': test_requirements,
+        'filer': ['django-filer==0.9.9', ],
+        'anylink': ['django-anylink==0.1.0', ],
     },
     include_package_data=True,
     license='Apache License (2.0)',
