@@ -6,7 +6,7 @@ Python Markdown
 ---------------
 
 Regular extensions from `Python Markdown <https://pythonhosted.org/Markdown/extensions/index.html>`_
-for extra markdown features, can be installed using module paths.
+for extra markdown features, can be used with markymark.
 
 .. code-block:: python
 
@@ -28,7 +28,7 @@ The following needs to be added to the settings:
 
     MARKYMARK_EXTENSIONS = [
         '..',
-        'markymark.extensions:LinkExtension',
+        'markymark.extensions.contrib.anylink',
     ]
 
     MARKYMARK_JS = [
@@ -36,7 +36,16 @@ The following needs to be added to the settings:
         'markdown/js/plugins/anylink-link.js',
     ]
 
-For this extension additional settings are required that can be found in the `django-anylink documentation <http://django-anylink.readthedocs.org/en/latest/configuration.html>`_
+
+This extension has extra dependencies that need to be installed:
+
+.. code-block:: bash
+
+    $ pip install django-markymark[anylink]
+
+.. note::
+
+    For this extension additional settings are required that can be found in the `django-anylink documentation <http://django-anylink.readthedocs.org/en/latest/configuration.html>`_
 
 
 Django-filer
@@ -50,7 +59,7 @@ The following needs to be added to the settings:
 
     MARKYMARK_EXTENSIONS = [
         '..',
-        'markymark.extensions:FilerFileExtension',
+        'markymark.extensions.contrib.filer',
     ]
 
     MARKYMARK_CSS = [
@@ -63,8 +72,17 @@ The following needs to be added to the settings:
         'markdown/js/plugins/filer-file.js',
     ]
 
-For this extension additional settings are required that can be found in the `django-filer documentation <http://django-filer.readthedocs.org/en/latest/settings.html>`_
 
+This extension has extra dependencies that need to be installed:
+
+.. code-block:: bash
+
+    $ pip install django-markymark[filer]
+
+
+.. note::
+
+    For this extension additional settings are required that can be found in the `django-filer documentation <http://django-filer.readthedocs.org/en/latest/settings.html>`_
 
 
 Autolink
@@ -78,7 +96,7 @@ The following needs to be added to the settings:
 
     MARKYMARK_EXTENSIONS = [
         '..',
-        'markymark.extensions:AutoLinkExtension',
+        'markymark.extensions.autolink',
     ]
 
 .. note::

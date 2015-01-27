@@ -26,6 +26,7 @@ INSTALLED_APPS = (
     'anylink',
     'easy_thumbnails',
     'filer',
+    'markymark',
 )
 
 TEMPLATE_DIRS = (
@@ -42,9 +43,9 @@ ANYLINK_EXTENSIONS = (
 MEDIA_ROOT = tempfile.mkdtemp()
 
 MARKYMARK_EXTENSIONS = [
-    'markymark.extensions:LinkExtension',
-    'markymark.extensions:FilerFileExtension',
-    'markymark.extensions:AutoLinkExtension',
+    'markymark.extensions.contrib.anylink',
+    'markymark.extensions.contrib.filer',
+    'markymark.extensions.autolink',
 ]
 
 MARKYMARK_CSS = [

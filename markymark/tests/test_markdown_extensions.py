@@ -2,7 +2,7 @@ from anylink.models import AnyLink
 import pytest
 from filer.models.filemodels import File
 
-from markymark.templatetags.markup import markdown_filter
+from markymark.templatetags.markymark import markdown_filter
 from markymark.tests.factories.files import FileFactory, ImageFactory
 
 

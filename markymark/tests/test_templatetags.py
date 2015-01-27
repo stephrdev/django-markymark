@@ -1,6 +1,7 @@
+from django.template import Context, Template
 from django.utils.safestring import SafeText
 
-from markymark.templatetags.markup import markdown_filter
+from markymark.templatetags.markymark import markdown_filter
 
 
 class TestMarkdownFilter:
@@ -27,3 +28,11 @@ class TestMarkdownFilter:
             '<em>foo</em></p>'
         )
         assert type(expected) is SafeText
+
+    def test_template_load_markymark(self):
+        text = (
+            '{% load markymark %}'
+            '{{ test|markdown }}'
+        )
+        template = Template(text).render(Context({'test': 'test'}))
+        template == u'<p>test</p>'
