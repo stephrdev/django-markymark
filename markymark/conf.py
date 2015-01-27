@@ -2,7 +2,7 @@ from django.conf import settings
 
 
 MARKYMARK_EXTENSIONS = getattr(settings, 'MARKYMARK_EXTENSIONS', [
-    'markymark.extensions:LinkExtension',
+    'markymark.extensions.autolink',
 ])
 
 
