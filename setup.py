@@ -4,7 +4,7 @@ import codecs
 from setuptools import setup, find_packages
 
 
-version = '0.4'
+version = '0.5'
 
 
 if sys.argv[-1] == 'publish':
@@ -54,7 +54,7 @@ setup(
     description=(
         'django-markymark provides helpers and tools to integrate markdown '
         'into your editor.'),
-    long_description=read('README.rst'),
+    long_description=read('README.rst') + '\n\n' + read('CHANGELOG.rst'),
     author='Moccu GmbH & Co. KG',
     author_email='info@moccu.com',
     url='https://github.com/moccu/django-markymark/',
