@@ -24,8 +24,7 @@ def read(*parts):
 
 install_requirements = [
     'django>=1.6',
-    'markdown==2.5.2',
-    'django-floppyforms==1.3.0',
+    'markdown==2.5.2'
 ]
 
 
