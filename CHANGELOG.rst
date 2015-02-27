@@ -4,6 +4,7 @@ Changelog
 0.6 (unreleased)
 ----------------
 
+* Allow template-names to be overwritten
 * Made settings easier to be overwritten, you can now
   import default settings from `markymark.defaults`
 * Fixed contrib.anylink to avoid name clashes with other
