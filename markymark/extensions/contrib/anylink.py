@@ -13,7 +13,7 @@ LINK_RE = re.compile(r'(\[link\:(?P<id>\d+)\])', re.IGNORECASE)
 
 class AnyLinkExtension(markdown.Extension):
     def extendMarkdown(self, md, md_globals):
-        md.postprocessors.add('anylink', LinkPostprocessor(md), '_end')
+        md.postprocessors.add('anylink', AnyLinkPostprocessor(md), '_end')
 
 
 class AnyLinkPostprocessor(markdown.postprocessors.Postprocessor):
@@ -36,4 +36,4 @@ class AnyLinkPostprocessor(markdown.postprocessors.Postprocessor):
 
 
 def makeExtension(**kwargs):
-    return LinkExtension(**kwargs)
+    return AnyLinkExtension(**kwargs)

@@ -4,6 +4,10 @@ Changelog
 0.6 (unreleased)
 ----------------
 
+* Made settings easier to be overwritten, you can now
+  import default settings from `markymark.defaults`
+* Fixed contrib.anylink to avoid name clashes with other
+  extensions named "link"
 * Fix fullscreen icon integration
 
 0.5 (2015-02-13)
