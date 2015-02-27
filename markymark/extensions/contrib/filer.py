@@ -7,6 +7,8 @@ from django.template.loader import render_to_string
 from filer.models.filemodels import File
 import markdown
 
+from markymark import conf
+
 
 FILE_RE = re.compile(r'(\[file\:(?P<id>\d+)\])', re.IGNORECASE)
 
@@ -32,7 +34,7 @@ class FilerFilePostprocessor(markdown.postprocessors.Postprocessor):
             options = match.groupdict()
             try:
                 file = File.objects.get(pk=int(options['id']))
-                return render_to_string('markdown/file.html', {
+                return render_to_string(conf.MARKYMARK_TEMPLATES['filer'], {
                     'file': file.get_real_instance(),
                 })
 

@@ -7,6 +7,8 @@ from django.conf import settings
 from django.template.loader import render_to_string
 import markdown
 
+from markymark import conf
+
 
 LINK_RE = re.compile(r'(\[link\:(?P<id>\d+)\])', re.IGNORECASE)
 
@@ -25,7 +27,7 @@ class AnyLinkPostprocessor(markdown.postprocessors.Postprocessor):
                 link = AnyLink.objects.get(pk=int(options['id']))
                 return match.group(0).replace(
                     match.group(1),
-                    render_to_string('markdown/anylink.html', {'link': link})
+                    render_to_string(conf.MARKYMARK_TEMPLATES['anylink'], {'link': link})
                 )
 
             except (KeyError, AnyLink.DoesNotExist):
