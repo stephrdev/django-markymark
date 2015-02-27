@@ -17,7 +17,10 @@ class AutoLinkPostprocessor(markdown.postprocessors.Postprocessor):
 
     def run(self, text):
         def re_callback(match):
-            return render_to_string(conf.MARKYMARK_TEMPLATES['autolink'], {'url': match.group()})
+            return render_to_string(
+                conf.MARKYMARK_TEMPLATES['autolink'],
+                {'url': match.group()}
+            )
         return AUTOLINK_RE.sub(re_callback, text)
 
 

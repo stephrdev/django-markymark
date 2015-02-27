@@ -20,5 +20,5 @@ DEFAULT_MARKYMARK_JS = [
 DEFAULT_MARKYMARK_TEMPLATES = {
     'filer': 'markdown/file.html',
     'anylink': 'markdown/anylink.html',
-    'autolink': 'markdown/autolink.html,
+    'autolink': 'markdown/autolink.html',
 }
