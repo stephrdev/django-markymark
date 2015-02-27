@@ -1,6 +1,11 @@
 Changelog
 =========
 
+0.6 (unreleased)
+----------------
+
+* Fix fullscreen icon integration
+
 0.5 (2015-02-13)
 ----------------
 

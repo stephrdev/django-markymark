@@ -180,40 +180,46 @@
   font-family: "markdown-editor";
 }
 .md-editor .glyphicon-bold:before {
-		content: "\e800";
+    content: '\e800';
 }
 .md-editor .glyphicon-italic:before {
-		content: "\e801";
+    content: '\e801';
 }
 .md-editor .glyphicon-header:before {
-		content: "\e802";
+    content: '\e802';
 }
 .md-editor .glyphicon-picture:before {
-		content: "\e803";
+    content: '\e803';
 }
 .md-editor .glyphicon-list-bullet:before {
-		content: "\e804";
+    content: '\e804';
 }
 .md-editor .glyphicon-list-numbered:before {
-		content: "\e805";
+    content: '\e805';
 }
 .md-editor .glyphicon-asterisk:before {
-		content: "\e806";
+    content: '\e806';
 }
 .md-editor .glyphicon-comment:before {
-		content: "\e807";
+    content: '\e807';
 }
 .md-editor .glyphicon-search:before {
-		content: "\e808";
+    content: '\e808';
 }
 .md-editor .glyphicon-minus:before {
-		content: "\e809";
+    content: '\e809';
 }
 .md-editor .glyphicon-bug:before {
-		content: "\e80a";
+    content: '\e80a';
+}
+.md-editor .glyphicon-fullscreen-on:before {
+    content: '\e80b';
+}
+.md-editor .glyphicon-fullscreen-off:before {
+    content: '\e80c';
 }
 .md-editor .glyphicon-link:before {
-		content: "\e80b";
+    content: '\e80d';
 }
 
 .md-nooverflow {

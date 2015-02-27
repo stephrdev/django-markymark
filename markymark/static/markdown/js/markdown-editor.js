@@ -1259,12 +1259,12 @@
       icons: {
         fullscreenOn: {
           fa: 'fa fa-expand',
-          glyph: 'glyphicon glyphicon-fullscreen',
+          glyph: 'glyphicon glyphicon-fullscreen-on',
           'fa-3': 'icon-resize-full'
         },
         fullscreenOff: {
           fa: 'fa fa-compress',
-          glyph: 'glyphicon glyphicon-fullscreen',
+          glyph: 'glyphicon glyphicon-fullscreen-off',
           'fa-3': 'icon-resize-small'
         }
       }
