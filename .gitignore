@@ -11,3 +11,4 @@ markymark/tests/static/
 htmlcov/
 dist/
 examples/example/web/
+build/
