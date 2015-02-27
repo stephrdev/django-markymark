@@ -4,6 +4,7 @@ import markdown
 from django.template.loader import render_to_string
 
 from markymark import conf
+from markymark.extensions import MarkymarkExtension
 
 
 AUTOLINK_RE = re.compile((
@@ -24,8 +25,9 @@ class AutoLinkPostprocessor(markdown.postprocessors.Postprocessor):
         return AUTOLINK_RE.sub(re_callback, text)
 
 
-class AutoLinkExtension(markdown.Extension):
+class AutoLinkExtension(MarkymarkExtension):
     def extendMarkdown(self, md, md_globals):
+        super(AutoLinkExtension, self).extendMarkdown(md, md_globals)
         md.postprocessors.add('autolink', AutoLinkPostprocessor(md), '_end')
 
 

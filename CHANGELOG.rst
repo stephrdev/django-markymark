@@ -4,6 +4,7 @@ Changelog
 0.6 (unreleased)
 ----------------
 
+* The return value of `render_markdown` is now marked as safe
 * Allow template-names to be overwritten
 * Made settings easier to be overwritten, you can now
   import default settings from `markymark.defaults`

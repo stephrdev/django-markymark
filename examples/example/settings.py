@@ -94,21 +94,6 @@ MARKYMARK_EXTENSIONS = [
     'markdown.extensions.fenced_code',
 ]
 
-MARKYMARK_CSS = [
-    'markdown/css/markdown-editor.css',
-    'markdown/css/markdown-editor-adminfix.css',
-    'markdown/css/plugins/filer-file.css',
-]
-
-MARKYMARK_JS = [
-    'markdown/js/markdown-init.js',
-    'markdown/js/markdown.js',
-    'markdown/js/markdown-editor.js',
-    'markdown/js/plugins/clean.js',
-    'markdown/js/plugins/anylink-link.js',
-    'markdown/js/plugins/filer-file.js',
-]
-
 ANYLINK_EXTENSIONS = (
     'anylink.extensions.ExternalLink',
 )

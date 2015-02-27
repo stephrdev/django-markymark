@@ -8,13 +8,21 @@ from filer.models.filemodels import File
 import markdown
 
 from markymark import conf
+from markymark.extensions import MarkymarkExtension
 
 
 FILE_RE = re.compile(r'(\[file\:(?P<id>\d+)\])', re.IGNORECASE)
 
 
-class FilerFileExtension(markdown.Extension):
+class FilerFileExtension(MarkymarkExtension):
+    class Media:
+        js = ('markdown/js/plugins/filer-file.js',)
+        css = {
+            'all': ('markdown/css/plugins/filer-file.css',)
+        }
+
     def extendMarkdown(self, md, md_globals):
+        super(FilerFileExtension, self).extendMarkdown(md, md_globals)
         md.postprocessors.add('filerfile', FilerFilePostprocessor(md), '_end')
 
 

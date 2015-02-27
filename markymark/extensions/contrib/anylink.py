@@ -8,13 +8,18 @@ from django.template.loader import render_to_string
 import markdown
 
 from markymark import conf
+from markymark.extensions import MarkymarkExtension
 
 
 LINK_RE = re.compile(r'(\[link\:(?P<id>\d+)\])', re.IGNORECASE)
 
 
-class AnyLinkExtension(markdown.Extension):
+class AnyLinkExtension(MarkymarkExtension):
+    class Media:
+        js = ('markdown/js/plugins/anylink-link.js',)
+
     def extendMarkdown(self, md, md_globals):
+        super(AnyLinkExtension, self).extendMarkdown(md, md_globals)
         md.postprocessors.add('anylink', AnyLinkPostprocessor(md), '_end')
 
 
