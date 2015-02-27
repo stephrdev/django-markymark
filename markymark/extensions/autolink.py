@@ -3,6 +3,8 @@ import re
 import markdown
 from django.template.loader import render_to_string
 
+from markymark import conf
+
 
 AUTOLINK_RE = re.compile((
     r'(https?|ftps?|file|ssh|mms|svn(?:\+ssh)?|git|dict|nntp|irc|'
@@ -15,7 +17,7 @@ class AutoLinkPostprocessor(markdown.postprocessors.Postprocessor):
 
     def run(self, text):
         def re_callback(match):
-            return render_to_string('markdown/autolink.html', {'url': match.group()})
+            return render_to_string(conf.MARKYMARK_TEMPLATES['autolink'], {'url': match.group()})
         return AUTOLINK_RE.sub(re_callback, text)
 
 
