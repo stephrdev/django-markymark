@@ -4,6 +4,7 @@ Changelog
 0.6 (unreleased)
 ----------------
 
+* Rework extensions to allow js/css files to be defined directly on each extension
 * The return value of `render_markdown` is now marked as safe
 * Allow template-names to be overwritten
 * Made settings easier to be overwritten, you can now
