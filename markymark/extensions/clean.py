@@ -1,4 +1,4 @@
-from markymark.extensions import MarkymarkExtension
+from markymark.extensions.base import MarkymarkExtension
 
 
 class CleanExtension(MarkymarkExtension):

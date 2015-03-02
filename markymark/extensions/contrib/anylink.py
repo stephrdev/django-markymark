@@ -8,7 +8,7 @@ from django.template.loader import render_to_string
 import markdown
 
 from markymark import conf
-from markymark.extensions import MarkymarkExtension
+from markymark.extensions.base import MarkymarkExtension
 
 
 LINK_RE = re.compile(r'(\[link\:(?P<id>\d+)\])', re.IGNORECASE)

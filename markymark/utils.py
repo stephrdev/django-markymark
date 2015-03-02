@@ -4,7 +4,7 @@ from django.utils.safestring import mark_safe
 from django.utils import six
 
 from markymark import conf
-from markymark.extensions import MarkymarkExtension
+from markymark.extensions.base import MarkymarkExtension
 
 
 class MarkymarkRenderer(markdown.Markdown):

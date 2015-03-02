@@ -8,7 +8,7 @@ from filer.models.filemodels import File
 import markdown
 
 from markymark import conf
-from markymark.extensions import MarkymarkExtension
+from markymark.extensions.base import MarkymarkExtension
 
 
 FILE_RE = re.compile(r'(\[file\:(?P<id>\d+)\])', re.IGNORECASE)

@@ -4,7 +4,7 @@ import markdown
 from django.template.loader import render_to_string
 
 from markymark import conf
-from markymark.extensions import MarkymarkExtension
+from markymark.extensions.base import MarkymarkExtension
 
 
 AUTOLINK_RE = re.compile((
