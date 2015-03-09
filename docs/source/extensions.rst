@@ -31,11 +31,6 @@ The following needs to be added to the settings:
         'markymark.extensions.contrib.anylink',
     ]
 
-    MARKYMARK_JS = [
-        '..',
-        'markdown/js/plugins/anylink-link.js',
-    ]
-
 
 This extension has extra dependencies that need to be installed:
 
@@ -60,16 +55,6 @@ The following needs to be added to the settings:
     MARKYMARK_EXTENSIONS = [
         '..',
         'markymark.extensions.contrib.filer',
-    ]
-
-    MARKYMARK_CSS = [
-        '..',
-        'markdown/css/plugins/filer-file.css',
-    ]
-
-    MARKYMARK_JS = [
-        '..',
-        'markdown/js/plugins/filer-file.js',
     ]
 
 
