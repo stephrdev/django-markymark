@@ -5,10 +5,10 @@ Changelog
 ----------------
 
 * Rework extensions to allow js/css files to be defined directly on each extension
-* The return value of `render_markdown` is now marked as safe
+* The return value of :func:`~markymark.utils.render_markdown` is now marked as safe
 * Allow template-names to be overwritten
 * Made settings easier to be overwritten, you can now
-  import default settings from `markymark.defaults`
+  import default settings from :mod:`markymark.defaults`
 * Fixed contrib.anylink to avoid name clashes with other
   extensions named "link"
 * Fix fullscreen icon integration
@@ -21,7 +21,7 @@ Changelog
 
 
 0.2..0.4 (2015-01-22)
-----------------
+---------------------
 
 * General cleanups and bugfixes.
 

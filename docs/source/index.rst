@@ -9,6 +9,7 @@ Contents:
    configuration
    extensions
    usage
+   changelog
 
 Api documentation:
 
