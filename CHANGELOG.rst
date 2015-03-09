@@ -1,7 +1,7 @@
 Changelog
 =========
 
-0.6 (unreleased)
+0.6 (2015-03-09)
 ----------------
 
 * Rework extensions to allow js/css files to be defined directly on each extension
