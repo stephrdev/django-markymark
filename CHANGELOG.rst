@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.7 (2015-03-09)
+----------------
+
+* Fix release
+
+
 0.6 (2015-03-09)
 ----------------
 
@@ -12,6 +18,7 @@ Changelog
 * Fixed contrib.anylink to avoid name clashes with other
   extensions named "link"
 * Fix fullscreen icon integration
+
 
 0.5 (2015-02-13)
 ----------------
