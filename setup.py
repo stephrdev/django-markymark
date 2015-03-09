@@ -54,7 +54,7 @@ setup(
     description=(
         'django-markymark provides helpers and tools to integrate markdown '
         'into your editor.'),
-    long_description=read('README.rst') + '\n\n' + read('CHANGELOG.rst'),
+    long_description=read('README.rst'),
     author='Moccu GmbH & Co. KG',
     author_email='info@moccu.com',
     url='https://github.com/moccu/django-markymark/',
