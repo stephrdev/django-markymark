@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.7.2 (2015-03-09)
+----------------
+
+* Fix anylink javascript to link to 'add' view
+
+
 0.7.1 (2015-03-09)
 ----------------
 
