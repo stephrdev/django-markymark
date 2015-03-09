@@ -19,6 +19,22 @@ markymark.extensions.autolink module
     :undoc-members:
     :show-inheritance:
 
+markymark.extensions.base module
+--------------------------------
+
+.. automodule:: markymark.extensions.base
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+markymark.extensions.clean module
+---------------------------------
+
+.. automodule:: markymark.extensions.clean
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 
 Module contents
 ---------------

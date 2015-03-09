@@ -20,6 +20,14 @@ markymark.conf module
     :undoc-members:
     :show-inheritance:
 
+markymark.defaults module
+-------------------------
+
+.. automodule:: markymark.defaults
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
 markymark.fields module
 -----------------------
 

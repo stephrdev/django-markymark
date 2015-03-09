@@ -4,10 +4,10 @@ markymark.templatetags package
 Submodules
 ----------
 
-markymark.templatetags.markup module
-------------------------------------
+markymark.templatetags.markymark module
+---------------------------------------
 
-.. automodule:: markymark.templatetags.markup
+.. automodule:: markymark.templatetags.markymark
     :members:
     :undoc-members:
     :show-inheritance:
