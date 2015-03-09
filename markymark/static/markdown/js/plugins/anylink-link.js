@@ -28,7 +28,12 @@
 		},
 		callback: function(e) {
 			var self = this,
-				oldDissmissFn = window.dismissRelatedImageLookupPopup;
+				oldDissmissFn = window.dismissRelatedImageLookupPopup,
+				params,
+				win;
+
+			params = '_popup=1&aoc=1';
+			value = 'add';
 
 			window.dismissRelatedLookupPopup = function(popup, id) {
 				popup.close();
@@ -40,7 +45,14 @@
 				}
 			};
 
-			window.open('/admin/anylink/anylink/?_popup=1', 'Link', 'width=800,height=600');
+			win = window.open(
+				'/admin/anylink/anylink/' + value + '/?' + params,
+				'Link',
+				'width=800,height=600,resizable=yes,scrollbars=yes'
+			);
+
+			win.focus();
+			return false;
 		}
 	});
 })(window.jQuery || window.django.jQuery);
