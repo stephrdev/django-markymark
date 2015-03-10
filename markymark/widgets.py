@@ -6,7 +6,7 @@ from markymark.utils import initialize_renderer
 class MarkdownTextarea(forms.Textarea):
     def __init__(self, *args, **kwargs):
         super(MarkdownTextarea, self).__init__(*args, **kwargs)
-        self.attrs['data-provide'] = 'init-markdown'
+        self.attrs['data-provide'] = 'markdown'
 
     def _media(self):
         media = forms.Media(
@@ -15,7 +15,6 @@ class MarkdownTextarea(forms.Textarea):
                 'markdown/css/markdown-editor-adminfix.css',
             )},
             js=(
-                'markdown/js/markdown-init.js',
                 'markdown/js/markdown.js',
                 'markdown/js/markdown-editor.js'
             )

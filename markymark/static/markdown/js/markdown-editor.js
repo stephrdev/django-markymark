@@ -870,7 +870,11 @@
       var $this = $(this)
         , data = $this.data('markdown')
         , options = typeof option == 'object' && option
-      if (!data) $this.data('markdown', (data = new Markdown(this, options)))
+      if (!data) {
+        $this.data('markdown', (data = new Markdown(this, options)))
+      } else {
+        $.extend(data.$options, options);
+      }
     })
   }
 
