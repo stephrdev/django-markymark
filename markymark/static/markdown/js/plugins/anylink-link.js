@@ -1,24 +1,25 @@
 (function($) {
-	var groups = $.fn.markdown.defaults.additionalButtons,
-		groupPlugins;
+	var
+		buttons = $.fn.markdown.defaults.buttons,
+		groupLink,
+		cmdUrlIndex
+	;
 
-	for (var i in groups) {
-		if (groups[i].name === 'groupPlugins') {
-			groupPlugins = groups[i];
-			break;
+	for (var section in buttons) {
+		for (var i in buttons[section]) {
+			if (buttons[section][i].name === 'groupLink') {
+				groupLink = buttons[section][i];
+				for (var x in groupLink.data) {
+					if (groupLink.data[x].name == 'cmdUrl') {
+						cmdUrlIndex = x;
+						break;
+					}
+				}
+			}
 		}
 	}
 
-	if (!groupPlugins) {
-		groupPlugins = {
-			name: 'groupPlugins',
-			data: []
-		};
-
-		$.fn.markdown.defaults.additionalButtons.push(groupPlugins);
-	}
-
-	groupPlugins.data.push({
+	groupLink.data[cmdUrlIndex] = {
 		name: 'cmdAnylinkLink',
 		title: 'Link',
 		hotkey: 'Ctrl+L',
@@ -54,5 +55,5 @@
 			win.focus();
 			return false;
 		}
-	});
+	};
 })(window.jQuery || window.django.jQuery);
