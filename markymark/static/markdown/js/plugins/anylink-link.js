@@ -10,7 +10,7 @@
 			if (buttons[section][i].name === 'groupLink') {
 				groupLink = buttons[section][i];
 				for (var x in groupLink.data) {
-					if (groupLink.data[x].name == 'cmdUrl') {
+					if (groupLink.data[x].name === 'cmdUrl') {
 						cmdUrlIndex = x;
 						break;
 					}
