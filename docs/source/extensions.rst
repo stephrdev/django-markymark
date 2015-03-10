@@ -42,6 +42,12 @@ This extension has extra dependencies that need to be installed:
 
     For this extension additional settings are required that can be found in the `django-anylink documentation <http://django-anylink.readthedocs.org/en/latest/configuration.html>`_
 
+.. warning::
+
+    The JavaScript plugin overwrites the functionality of the "Link" button
+    of the markdown editor with it's own implementation.
+    Please be aware of that.
+
 
 Django-filer
 ------------
