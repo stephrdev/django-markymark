@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.8.0 (2015-03-12)
+------------------
+
+* Refactor JavaScript part of plugins to replace existing icons
+* Fix bug in anylink js integration to avoid blank window after save
+
+
 0.7.2 (2015-03-09)
 ----------------
 
