@@ -29,19 +29,19 @@
 		},
 		callback: function(e) {
 			var self = this,
-				originalAnyLinkCallback = window.AnyLinkAddOrChangeWidget.callback,
+				originalDismissAddAnotherPopup = window.dismissAddAnotherPopup,
 				params,
 				win;
 
-			params = '_popup=1&aoc=1';
+			params = '_popup=1';
 			value = 'add';
 
-			window.AnyLinkAddOrChangeWidget.callback = function(win, link_id, link_name) {
+			window.dismissAddAnotherPopup = function(win, link_id) {
+				e.replaceSelection('[link:' + link_id + ']');
+
 				win.close();
 
-				window.AnyLinkAddOrChangeWidget.callback = originalAnyLinkCallback;
-
-				e.replaceSelection('[link:' + link_id + ']');
+				window.dismissAddAnotherPopup = originalDismissRelatedLookupPopup;
 			};
 
 			win = window.open(

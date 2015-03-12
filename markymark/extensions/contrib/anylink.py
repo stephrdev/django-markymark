@@ -18,7 +18,6 @@ class AnyLinkExtension(MarkymarkExtension):
     class Media:
         js = (
             'markdown/js/plugins/anylink-link.js',
-            'anylink/anylink-addorchangewidget.js'
         )
 
     def extendMarkdown(self, md, md_globals):
