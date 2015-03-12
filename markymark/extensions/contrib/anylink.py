@@ -16,7 +16,10 @@ LINK_RE = re.compile(r'(\[link\:(?P<id>\d+)\])', re.IGNORECASE)
 
 class AnyLinkExtension(MarkymarkExtension):
     class Media:
-        js = ('markdown/js/plugins/anylink-link.js',)
+        js = (
+            'markdown/js/plugins/anylink-link.js',
+            'anylink/anylink-addorchangewidget.js'
+        )
 
     def extendMarkdown(self, md, md_globals):
         super(AnyLinkExtension, self).extendMarkdown(md, md_globals)

@@ -29,21 +29,19 @@
 		},
 		callback: function(e) {
 			var self = this,
-				oldDissmissFn = window.dismissRelatedImageLookupPopup,
+				originalAnyLinkCallback = window.AnyLinkAddOrChangeWidget.callback,
 				params,
 				win;
 
 			params = '_popup=1&aoc=1';
 			value = 'add';
 
-			window.dismissRelatedLookupPopup = function(popup, id) {
-				popup.close();
+			window.AnyLinkAddOrChangeWidget.callback = function(win, link_id, link_name) {
+				win.close();
 
-				window.dismissRelatedImageLookupPopup = oldDissmissFn;
+				window.AnyLinkAddOrChangeWidget.callback = originalAnyLinkCallback;
 
-				if (id) {
-					e.replaceSelection('[link:' + id + ']');
-				}
+				e.replaceSelection('[link:' + link_id + ']');
 			};
 
 			win = window.open(
