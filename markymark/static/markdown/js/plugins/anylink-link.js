@@ -30,11 +30,7 @@
 		callback: function(e) {
 			var self = this,
 				originalDismissAddAnotherPopup = window.dismissAddAnotherPopup,
-				params,
 				win;
-
-			params = '_popup=1';
-			value = 'add';
 
 			window.dismissAddAnotherPopup = function(win, link_id) {
 				e.replaceSelection('[link:' + link_id + ']');
@@ -45,7 +41,7 @@
 			};
 
 			win = window.open(
-				'/admin/anylink/anylink/' + value + '/?' + params,
+				'/admin/anylink/anylink/add/?_popup=1',
 				'Link',
 				'width=800,height=600,resizable=yes,scrollbars=yes'
 			);
