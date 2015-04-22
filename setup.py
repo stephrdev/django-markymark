@@ -24,7 +24,7 @@ def read(*parts):
 
 install_requirements = [
     'django>=1.6',
-    'markdown==2.5.2'
+    'markdown-py26-support==2.6.2'
 ]
 
 
