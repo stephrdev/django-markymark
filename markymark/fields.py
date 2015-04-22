@@ -14,3 +14,13 @@ class MarkdownField(models.TextField):
     def formfield(self, form_class=MarkdownFormField, **kwargs):
         return super(MarkdownField, self).formfield(
             form_class=form_class, **kwargs)
+
+
+try:
+    from south.modelsinspector import add_introspection_rules
+    add_introspection_rules(
+        rules=[((MarkdownField,), [], {})],
+        patterns=['^markymark\.fields']
+    )
+except ImportError:
+    pass
