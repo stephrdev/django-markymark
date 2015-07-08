@@ -17,11 +17,9 @@
  * limitations under the License.
  * ========================================================== */
 
-!function (jQuery) {
+!function ($) {
 
   "use strict"; // jshint ;_;
-
-  $ = jQuery;
 
   /* MARKDOWN CLASS DEFINITION
    * ========================== */
