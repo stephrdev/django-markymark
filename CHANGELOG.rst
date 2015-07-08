@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.8.3 (2015-07-08)
+------------------
+
+* fix - make "$" available in function only in markdown-editor.js
+
+
 0.8.2 (2015-04-22)
 ------------------
 
