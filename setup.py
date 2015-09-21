@@ -4,7 +4,7 @@ import codecs
 from setuptools import setup, find_packages
 
 
-version = '0.8.3'
+version = '0.8.4'
 
 
 if sys.argv[-1] == 'publish':
@@ -29,22 +29,17 @@ install_requirements = [
 
 
 test_requirements = [
-    'py==1.4.26',
-    'pyflakes==0.8.1',
-    'pytest==2.6.4',
+    'pytest==2.8.0',
     'pytest-cache==1.0',
-    'pytest-cov==1.7.0',
-    'pytest-flakes==0.2',
+    'pytest-cov==2.1.0',
+    'pytest-django==2.8.0',
+    'pytest-flakes==1.0.1',
     'pytest-pep8==1.0.6',
-    'pytest-django==2.7.0',
     'cov-core==1.15.0',
-    'coverage==3.7.1',
-    'execnet==1.2.0',
-    'pep8==1.5.7',
-    'mock==1.0.1',
-    'factory_boy==2.4.1',
-    'django-filer==0.9.9',
-    'django-anylink==0.1.0',
+    'mock==1.3.0',
+    'factory-boy==2.5.2',
+    'django-filer==0.9.12',
+    'django-anylink==0.2.0',
 ]
 
 
@@ -67,8 +62,8 @@ setup(
     install_requires=install_requirements,
     extras_require={
         'tests': test_requirements,
-        'filer': ['django-filer==0.9.9', ],
-        'anylink': ['django-anylink==0.1.0', ],
+        'filer': ['django-filer==0.9.12', ],
+        'anylink': ['django-anylink==0.2.0', ],
     },
     include_package_data=True,
     license='Apache License (2.0)',
@@ -87,6 +82,7 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.5',
         'Programming Language :: Python :: Implementation :: CPython',
     ],
     zip_safe=False,
