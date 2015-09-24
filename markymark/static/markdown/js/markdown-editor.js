@@ -89,7 +89,7 @@
                 btnClass = button.btnClass ? button.btnClass : 'btn',
                 tabIndex = button.tabIndex ? button.tabIndex : '-1',
                 hotkey = typeof button.hotkey !== 'undefined' ? button.hotkey : '',
-                hotkeyCaption = typeof jQuery.hotkeys !== 'undefined' && hotkey !== '' ? ' ('+hotkey+')' : ''
+                hotkeyCaption = typeof $.hotkeys !== 'undefined' && hotkey !== '' ? ' ('+hotkey+')' : ''
 
             // Construct the button object
             buttonContainer = $('<button></button>');
@@ -336,7 +336,7 @@
 
         // Set width
         if (options.width && options.width !== 'inherit') {
-          if (jQuery.isNumeric(options.width)) {
+          if ($.isNumeric(options.width)) {
             editor.css('display', 'table')
             textarea.css('width', options.width + 'px')
           } else {
@@ -346,7 +346,7 @@
 
         // Set height
         if (options.height && options.height !== 'inherit') {
-          if (jQuery.isNumeric(options.height)) {
+          if ($.isNumeric(options.height)) {
             var height = options.height
             if (editorHeader) height = Math.max(0, height - editorHeader.outerHeight())
             if (editorFooter) height = Math.max(0, height - editorFooter.outerHeight())
@@ -373,7 +373,7 @@
           this.disableButtons('all');
         }
 
-        if (this.eventSupported('keydown') && typeof jQuery.hotkeys === 'object') {
+        if (this.eventSupported('keydown') && typeof $.hotkeys === 'object') {
           editorHeader.find('[data-provider="bootstrap-markdown"]').each(function() {
             var $button = $(this),
               hotkey = $button.attr('data-hotkey')
@@ -606,7 +606,7 @@
           /* browser not supported */
           function() {
               e.value += text
-              return jQuery(e)
+              return $(e)
           }
 
       )()
