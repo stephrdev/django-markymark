@@ -4,7 +4,7 @@ import codecs
 from setuptools import setup, find_packages
 
 
-version = '0.8.4'
+version = '0.9.0'
 
 
 if sys.argv[-1] == 'publish':
@@ -39,7 +39,7 @@ test_requirements = [
     'mock==1.3.0',
     'factory-boy==2.5.2',
     'django-filer==0.9.12',
-    'django-anylink==0.2.0',
+    'django-anylink==0.3.0',
 ]
 
 
@@ -63,7 +63,7 @@ setup(
     extras_require={
         'tests': test_requirements,
         'filer': ['django-filer==0.9.12', ],
-        'anylink': ['django-anylink==0.2.0', ],
+        'anylink': ['django-anylink==0.3.0', ],
     },
     include_package_data=True,
     license='Apache License (2.0)',
