@@ -6,7 +6,9 @@ from .widgets import MarkdownTextarea
 
 class MarkdownFormField(forms.fields.CharField):
     def __init__(self, *args, **kwargs):
-        kwargs['widget'] = MarkdownTextarea
+        widget = kwargs.get('widget', None)
+        if not widget or not issubclass(widget, MarkdownTextarea):
+            kwargs['widget'] = MarkdownTextarea
         super(MarkdownFormField, self).__init__(*args, **kwargs)
 
 
