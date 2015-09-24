@@ -3,12 +3,19 @@ django-markymark
 
 .. image:: https://badge.fury.io/py/django-markymark.png
     :target: http://badge.fury.io/py/django-markymark
+    :alt: Latest PyPI version
 
-.. image:: https://travis-ci.org/moccu/django-markymark.png?branch=master
-    :target: https://travis-ci.org/moccu/django-markymark
+.. image:: https://travis-ci.org/moccu/django-markymark.png
+   :target: https://travis-ci.org/moccu/django-markymark
+   :alt: Latest Travis CI build status
+
+.. image:: https://coveralls.io/repos/moccu/django-markymark/badge.svg
+  :target: https://coveralls.io/github/moccu/django-markymark
+  :alt: Coverage of master build
 
 .. image:: https://readthedocs.org/projects/django-markymark/badge/?version=latest
-    :target: http://django-markymark.readthedocs.org/en/latest/
+    :target: https://readthedocs.org/projects/django-markymark/?badge=latest
+    :alt: Latest read the docs build
 
 *django-markymark* provides helpers and tools to integrate markdown into your editor.
 
