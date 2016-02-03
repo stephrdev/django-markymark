@@ -29,6 +29,8 @@ install_requirements = [
 
 
 test_requirements = [
+    'tox',
+    'tox-pyenv',
     'pytest==2.8.0',
     'pytest-cache==1.0',
     'pytest-cov==2.1.0',
