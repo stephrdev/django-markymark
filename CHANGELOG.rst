@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.9.2 (2016-02-03)
+------------------
+
+* fix javascript - js was renamed from dismissAddAnotherPopup to dismissAddRelatedObjectPopup
+
+
 0.9.1 (2015-09-24)
 ------------------
 
