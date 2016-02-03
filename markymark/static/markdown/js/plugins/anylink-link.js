@@ -30,15 +30,18 @@
 		callback: function(e) {
 			var self = this,
 				originalDismissAddAnotherPopup = window.dismissAddAnotherPopup,
+				originalDismissAddRelatedObjectPopup = window.dismissAddRelatedObjectPopup,
 				win;
 
-			window.dismissAddAnotherPopup = function(win, link_id) {
+			window.dismissAddRelatedObjectPopup = function(win, link_id) {
 				e.replaceSelection('[link:' + link_id + ']');
 
 				win.close();
 
 				window.dismissAddAnotherPopup = originalDismissRelatedLookupPopup;
+				window.dismissAddRelatedObjectPopup = originalDismissAddRelatedObjectPopup;
 			};
+			window.dismissAddAnotherPopup = window.dismissAddRelatedObjectPopup;
 
 			win = window.open(
 				'/admin/anylink/anylink/add/?_popup=1',
