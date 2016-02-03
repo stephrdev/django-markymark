@@ -32,7 +32,7 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'markymark', 'templates'),
 )
 
-STATIC_URL = '/'
+STATIC_URL = '/static/'
 MEDIA_URL = '/'
 
 ANYLINK_EXTENSIONS = (
