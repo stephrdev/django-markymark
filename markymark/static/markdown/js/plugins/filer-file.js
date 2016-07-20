@@ -71,7 +71,7 @@
 					.addClass('has-image');
 			};
 
-			window.open('/admin/filer/folder/?_popup=1', 'Filer', 'width=800,height=600');
+			window.open('/admin/filer/folder/?_popup=1&_pick=file', 'Filer', 'width=800,height=600');
 		},
 
 		onClick: function(e) {

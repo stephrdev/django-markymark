@@ -40,7 +40,7 @@ test_requirements = [
     'cov-core==1.15.0',
     'mock==1.3.0',
     'factory-boy==2.5.2',
-    'django-filer==1.1.1',
+    'django-filer==1.2.4',
     'django-anylink==0.3.0',
 ]
 
@@ -64,7 +64,7 @@ setup(
     install_requires=install_requirements,
     extras_require={
         'tests': test_requirements,
-        'filer': ['django-filer', ],
+        'filer': ['django-filer==1.2.4', ],
         'anylink': ['django-anylink', ],
     },
     include_package_data=True,
