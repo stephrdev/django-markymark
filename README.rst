@@ -26,7 +26,7 @@ Features
 ========
 
  * Django form fields to integrate the bootstrap markdown editor (without the dependency on bootstrap)
- * `django-filer <https://github.com/stefanfoulis/django-filer>`_ integration
+ * `django-filer <https://github.com/divio/django-filer>`_ integration
  * `django-anylink <https://github.com/moccu/django-anylink>`_ integration
  * Various extensions to provide `GitHub Flavored Markdown <https://help.github.com/articles/github-flavored-markdown/>`_
 
