@@ -1,6 +1,5 @@
 .PHONY: tests coverage coverage-html devinstall tox docs clean
-APP=markymark
-COV=markymark
+APP=markymark/
 OPTS=
 
 help:
@@ -12,15 +11,13 @@ help:
 	@echo "clean-build - Clean build related files"
 
 tests:
-	py.test ${OPTS} ${APP}
+	py.test ${OPTS} testing/pytests
 
 coverage:
-	coverage run `which py.test` ${OPTS} ${APP}
-	coverage report -m --include=${COV}* --omit='*/tests*'
+	py.test ${OPTS} --cov=${APP} --cov-report=term-missing testing/pytests
 
 coverage-html:
-	coverage run `which py.test` ${OPTS} ${APP}
-	coverage html -d htmlcov --include=${COV}* --omit='*/tests*'
+	py.test ${OPTS} --cov=${APP} --cov-report=term-missing --cov-report=html testing/pytests
 
 devinstall:
 	pip install -e .
@@ -30,7 +27,7 @@ devinstall:
 docs: clean-build
 	pip install -e .
 	pip install -r requirements-docs.txt
-	sphinx-apidoc --force -o docs/source/modules/ markymark markymark/settings.py markymark/tests/
+	sphinx-apidoc --force -o docs/source/modules/ markymark markymark/settings.py testing/pytests/
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 

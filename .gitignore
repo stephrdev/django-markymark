@@ -1,6 +1,7 @@
 *.py[cod]
 .DS_Store
 .coverage
+coverage.xml
 .tox
 env/
 docs/build/

@@ -3,7 +3,7 @@ import pytest
 from filer.models.filemodels import File
 
 from markymark.templatetags.markymark import markdown_filter
-from markymark.tests.factories.files import FileFactory, ImageFactory
+from testing.pytests.factories.files import FileFactory, ImageFactory
 
 
 @pytest.mark.django_db

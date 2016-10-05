@@ -23,7 +23,7 @@ def read(*parts):
 
 
 install_requirements = [
-    'django>=1.7',
+    'django>=1.6,<1.9',
     'Markdown>=2.6,<2.7',
 ]
 
@@ -46,8 +46,8 @@ test_requirements = [
     'cov-core==1.15.0',
     'mock==1.3.0',
     'factory-boy==2.5.2',
-    'django-filer==1.2.4',
-    'django-anylink==0.3.0',
+    'django-filer<1.3.0',
+    'django-anylink',
 ]
 
 
@@ -62,7 +62,8 @@ setup(
     author_email='info@moccu.com',
     url='https://github.com/moccu/django-markymark/',
     packages=find_packages(exclude=[
-        'markymark.tests',
+        'testing',
+        'testing.pytests',
         'examples',
         'examples.example',
         'examples.example.app',
@@ -70,7 +71,7 @@ setup(
     install_requires=install_requirements,
     extras_require={
         'tests': test_requirements,
-        'filer': ['django-filer>=1.2.0,<1.3.0', ],
+        'filer': ['django-filer<1.3.0', ],
         'anylink': ['django-anylink', ],
     },
     include_package_data=True,
