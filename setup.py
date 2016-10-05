@@ -71,7 +71,7 @@ setup(
     install_requires=install_requirements,
     extras_require={
         'tests': test_requirements,
-        'filer': ['django-filer<1.3.0', ],
+        'filer': ['django-filer>=1.2.0,<1.3.0', ],
         'anylink': ['django-anylink', ],
     },
     include_package_data=True,
