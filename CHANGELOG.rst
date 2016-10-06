@@ -4,7 +4,7 @@ Changelog
 0.9.3 (2016-10-05)
 ------------------
 
-* fix issue - [MarkdownField should handle widget instances as well #7](https://github.com/moccu/django-markymark/issues/7)
+* fix issue - `MarkdownField should handle widget instances as well #7 <https://github.com/moccu/django-markymark/issues/7>`_
 * adjust install requirements to use 'official' python Markdown package
 * some improvements
 
