@@ -14,3 +14,4 @@ dist/
 examples/example/web/
 build/
 junit-*.xml
+database.db
