@@ -1150,6 +1150,29 @@
           }
         },
         {
+          name: 'insertTable',
+          title: 'Table',
+          hotkey: 'Ctrl+T',
+          icon: { glyph: 'glyphicon glyphicon-table', fa: 'fa fa-table', 'fa-3': 'icon-table' },
+          callback: function(e){
+            // Insert sample table instead of selection
+            var chunk, cursor, selected = e.getSelection(), content = e.getContent()
+
+            // Prepare sample table text
+            chunk = e.__localize('First Header  | Second Header\n' +
+                                   '------------- | -------------\n' +
+                                   'Content Cell  | Content Cell\n' +
+                                   'Content Cell  | Content Cell')
+
+            // transform selection and set the cursor into chunked text
+            e.replaceSelection(chunk)
+            cursor = selected.start
+
+            // Set the cursor
+            e.setSelection(cursor,cursor+chunk.length)
+           }
+        },
+        {
           name: 'cmdCode',
           hotkey: 'Ctrl+K',
           title: 'Code',
