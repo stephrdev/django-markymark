@@ -90,6 +90,7 @@ MARKYMARK_EXTENSIONS = [
     'markymark.extensions.autolink:AutoLinkExtension',
     'markdown.extensions.codehilite',
     'markdown.extensions.fenced_code',
+    'markdown.extensions.tables'
 ]
 
 ANYLINK_EXTENSIONS = (
