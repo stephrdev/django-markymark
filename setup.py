@@ -23,7 +23,7 @@ def read(*parts):
 
 
 install_requirements = [
-    'django>=1.6,<1.9',
+    'django>=1.6,<1.10',
     'Markdown>=2.6,<2.7',
 ]
 
