@@ -87,11 +87,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 TEST_RUNNER = ''
 
 MARKYMARK_EXTENSIONS = [
-    'markymark.extensions:AutoLinkExtension',
-    'markymark.extensions:LinkExtension',
-    'markymark.extensions:FilerFileExtension',
+    'markymark.extensions.autolink:AutoLinkExtension',
     'markdown.extensions.codehilite',
     'markdown.extensions.fenced_code',
+    'markdown.extensions.tables'
 ]
 
 ANYLINK_EXTENSIONS = (

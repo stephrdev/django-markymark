@@ -14,6 +14,7 @@ for extra markdown features, can be used with markymark.
         '..',
         'markdown.extensions.codehilite',
         'markdown.extensions.fenced_code',
+        'markdown.extensions.tables',
     ]
 
 

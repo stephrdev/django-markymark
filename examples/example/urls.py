@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
-from app.views import MarkdownView, PostsView
+from example.app.views import MarkdownView, PostsView
 
 
 admin.autodiscover()
