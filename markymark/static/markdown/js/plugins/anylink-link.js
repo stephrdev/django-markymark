@@ -34,7 +34,9 @@
 				win;
 
 			window.dismissAddRelatedObjectPopup = function(win, link_id) {
+				var selected = e.getSelection();
 				e.replaceSelection('[link:' + link_id + ']');
+				e.setSelection(selected.start, selected.start);
 
 				win.close();
 
