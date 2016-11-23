@@ -10,3 +10,10 @@
 	padding: inherit;
 	font-size: 14px;
 }
+body.djangocms-admin-style .md-editor {
+    margin-left: inherit !important;
+    width: auto !important;
+}
+body.djangocms-admin-style .md-editor .btn {
+    padding: 5px 10px !important;
+}
