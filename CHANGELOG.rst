@@ -1,6 +1,15 @@
 Changelog
 =========
 
+1.0.0 (2016-11-24)
+------------------
+
+* Add support for Django 1.9
+* Fix styling when using markymark with django-cms / djangocms-admin-style
+* Improve autolink extension to prevent double-linking
+* Javascript bugfixes
+
+
 0.9.3 (2016-10-05)
 ------------------
 
