@@ -64,6 +64,7 @@ setup(
     packages=find_packages(exclude=[
         'testing',
         'testing.pytests',
+        'testing.pytests.factories',
         'examples',
         'examples.example',
         'examples.example.app',
