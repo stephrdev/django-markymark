@@ -166,11 +166,11 @@
   display: none;
 }
 .md-editor .btn {
-  display: inline-block !important;
-  border: solid 1px #ccc !important;
-  border-radius: 2px !important;
-  padding: 5px 10px !important;
-  margin: 0 2px !important;
+  display: inline-block;
+  border: solid 1px #ccc;
+  border-radius: 2px;
+  padding: 5px 10px;
+  margin: 0 2px;
 }
 .md-editor .btn.hidden {
   display: none;
