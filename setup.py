@@ -30,6 +30,7 @@ install_requirements = [
 if sys.version_info < (2, 7):
     install_requirements = [
         'django<1.7',  # 1.6.x is last version to support py26
+        'Pillow==3.4.2',  # py26 not working with pillow 4.0.0
         'markdown-py26-support==2.6.2',
     ]
 
