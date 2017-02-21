@@ -19,4 +19,5 @@ body.djangocms-admin-style .md-editor .btn {
 }
 body.djangocms-admin-style .md-editor > textarea {
     border-radius: 0 !important;
+    width: 100% !important;
 }
