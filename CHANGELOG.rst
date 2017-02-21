@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.0.4 (2017-02-21)
+------------------
+
+* Fix styling when using markymark in inlines with django-cms / djangocms-admin-style
+
 1.0.0 (2016-11-24)
 ------------------
 
