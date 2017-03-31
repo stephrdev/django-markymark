@@ -32,7 +32,8 @@
 				originalDismissAddAnotherPopup = window.dismissAddAnotherPopup,
 				originalDismissAddRelatedObjectPopup = window.dismissAddRelatedObjectPopup,
 				win,
-				projectURL = location.pathname.split('/')[1];
+				projectName = location.pathname.split('/')[1],
+				projectURL = (projectName == 'admin') ? '' : '/' + projectName;
 
 			window.dismissAddRelatedObjectPopup = function(win, link_id) {
 				var selected = e.getSelection();
@@ -45,15 +46,9 @@
 				window.dismissAddRelatedObjectPopup = originalDismissAddRelatedObjectPopup;
 			};
 
-			if (projectURL == 'admin') {
-				var projectNAME = '';
-			} else {
-				var projectNAME = '/' + projectURL;
-			}
-
 			window.dismissAddAnotherPopup = window.dismissAddRelatedObjectPopup;
 			win = window.open(
-				projectNAME + '/admin/anylink/anylink/add/?_popup=1',
+				projectURL + '/admin/anylink/anylink/add/?_popup=1',
 				'Link',
 				'width=800,height=600,resizable=yes,scrollbars=yes'
 			);
