@@ -93,7 +93,9 @@
 					var id = this.$image.data('id');
 
 					if (id) {
+						var selected = this.editor.getSelection();
 						this.editor.replaceSelection('[file:' + id + ']');
+						this.editor.setSelection(selected.start, selected.start);
 						this.close();
 					}
 

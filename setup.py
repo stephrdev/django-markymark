@@ -4,7 +4,7 @@ import codecs
 from setuptools import setup, find_packages
 
 
-version = '0.9.3'
+version = '1.0.4'
 
 
 if sys.argv[-1] == 'publish':
@@ -23,13 +23,14 @@ def read(*parts):
 
 
 install_requirements = [
-    'django>=1.6,<1.9',
+    'django>=1.6,<1.10',
     'Markdown>=2.6,<2.7',
 ]
 
 if sys.version_info < (2, 7):
     install_requirements = [
         'django<1.7',  # 1.6.x is last version to support py26
+        'Pillow==3.4.2',  # py26 not working with pillow 4.0.0
         'markdown-py26-support==2.6.2',
     ]
 
@@ -64,6 +65,7 @@ setup(
     packages=find_packages(exclude=[
         'testing',
         'testing.pytests',
+        'testing.pytests.factories',
         'examples',
         'examples.example',
         'examples.example.app',
@@ -87,7 +89,6 @@ setup(
         'Framework :: Django',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.4',
