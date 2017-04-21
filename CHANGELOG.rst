@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.1.0 (2017-04-21)
+------------------
+
+* add table support including new button in editor
+
 1.0.5 (2017-04-20)
 ------------------
 
