@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.0.5 (2017-04-20)
+------------------
+
+* drop py26 support
+* Fix anylink pop up, make it more flexible for custom project urls
+
 1.0.4 (2017-02-21)
 ------------------
 
