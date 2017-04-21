@@ -31,6 +31,12 @@ Features
  * Various extensions to provide `GitHub Flavored Markdown <https://help.github.com/articles/github-flavored-markdown/>`_
 
 
+Contribution
+=========
+
+*django-markymark* uses a customized version of fontawesome created by `Fontello <http://fontello.com/>`. If you want to add a new icon, you have to upload our ``markdown-editor-config.json`` file, which is located in ``markymark/static/markdown/fonts/``, to fontello. Now you can select the icon you want and download the new config file and all webfonts.
+
+
 Resources
 =========
 
