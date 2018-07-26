@@ -10,5 +10,5 @@ Installation
 
     INSTALLED_APPS = (
         # ...
-        "markymark",
+        'markymark',
     )

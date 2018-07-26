@@ -1,4 +1,4 @@
-.. include:: ../../README.rst
+.. include:: ../README.rst
 
 Contents:
 
@@ -16,13 +16,17 @@ Api documentation:
 .. toctree::
    :maxdepth: 2
 
-   modules/modules
+   api_renderer
+   api_fields
+   api_widgets
+   api_templatetags
+   api_extensions
 
 
 Who's Marky Mark?
 -----------------
 
-`Marky Mark on WikiPedia <http://en.wikipedia.org/wiki/Mark_Wahlberg>`_
+`Marky Mark on Wikipedia <https://en.wikipedia.org/wiki/Mark_Wahlberg>`_
 
 
 Indices and tables
