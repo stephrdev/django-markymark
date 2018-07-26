@@ -1,10 +1,7 @@
-import os
 import tempfile
 
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(__file__)))
 
 DEBUG = True
-TEMPLATE_DEBUG = True
 
 SECRET_KEY = 'test'
 
@@ -28,9 +25,10 @@ INSTALLED_APPS = (
     'markymark',
 )
 
-TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'markymark', 'templates'),
-)
+TEMPLATES = [{
+    'BACKEND': 'django.template.backends.django.DjangoTemplates',
+    'APP_DIRS': True,
+}]
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/'
@@ -42,8 +40,8 @@ ANYLINK_EXTENSIONS = (
 MEDIA_ROOT = tempfile.mkdtemp()
 
 MARKYMARK_EXTENSIONS = [
-    'markymark.extensions.contrib.anylink',
-    'markymark.extensions.contrib.filer',
+    'markymark.extensions.anylink',
+    'markymark.extensions.filer',
     'markymark.extensions.autolink',
     'markymark.extensions.clean',
 ]

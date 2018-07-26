@@ -1,7 +1,5 @@
 import factory
-
-from filer.models.filemodels import File
-from filer.models.imagemodels import Image
+from filer.models import File, Image
 
 
 class FileFactory(factory.DjangoModelFactory):

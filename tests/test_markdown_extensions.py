@@ -1,9 +1,10 @@
-from anylink.models import AnyLink
 import pytest
+from anylink.models import AnyLink
 from filer.models.filemodels import File
 
 from markymark.templatetags.markymark import markdown_filter
-from testing.pytests.factories.files import FileFactory, ImageFactory
+
+from .factories.files import FileFactory, ImageFactory
 
 
 @pytest.mark.django_db
