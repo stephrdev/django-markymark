@@ -1,12 +1,10 @@
-from django.views.generic.edit import FormView
-from django.views.generic.base import TemplateView
+from django.views.generic import FormView, TemplateView
 
 from .forms import MarkdownForm
 from .models import Post
 
 
 class MarkdownView(FormView):
-
     form_class = MarkdownForm
     template_name = 'example.html'
 
@@ -18,10 +16,9 @@ class MarkdownView(FormView):
 
 
 class PostsView(TemplateView):
-
     template_name = 'posts.html'
 
     def get_context_data(self, **kwargs):
-        context = super(PostsView, self).get_context_data(**kwargs)
+        context = super().get_context_data(**kwargs)
         context['posts'] = Post.objects.all()
         return context
