@@ -1,8 +1,11 @@
 (function($) {
 	var
-		buttons = $.fn.markdown.defaults.buttons,
-		groupLink,
-		cmdImageIndex,
+		group = $.fn.markdown.defaults.buttons[0].filter(function(group) {
+			return group.name == 'groupLink';
+		})[0],
+		buttonIndex = group.data.findIndex(function(button) {
+			return button.name == 'cmdImage';
+		})
 		FilerFileDialog = function() {
 			this.initialize.apply(this, arguments);
 		}
@@ -57,13 +60,16 @@
 		},
 
 		openFilerPopup: function() {
-			var self = this,
-				oldDissmissFn = window.dismissRelatedImageLookupPopup;
+			var
+				self = this,
+				originalDismissAddRelatedObjectPopup = window.dismissAddRelatedObjectPopup,
+				baseUrl = window.location.pathname.substring(0, window.location.pathname.indexOf('/admin/'))
+			;
 
 			window.dismissRelatedImageLookupPopup = function(popup, id, thumbnail) {
 				popup.close();
 
-				window.dismissRelatedImageLookupPopup = oldDissmissFn;
+				window.dismissRelatedImageLookupPopup = originalDismissAddRelatedObjectPopup;
 
 				self.$image
 					.data('id', id)
@@ -71,7 +77,12 @@
 					.addClass('has-image');
 			};
 
-			window.open('/admin/filer/folder/?_popup=1&_pick=file', 'Filer', 'width=800,height=600');
+			window.open(
+				baseUrl + '/admin/filer/folder/?_popup=1&_pick=file',
+				'Filer',
+				'width=800,height=600,resizable=yes,scrollbars=yes'
+			).focus();
+			return false;
 		},
 
 		onClick: function(e) {
@@ -104,27 +115,12 @@
 		}
 	};
 
-	for (var section in buttons) {
-		for (var i in buttons[section]) {
-			if (buttons[section][i].name === 'groupLink') {
-				groupLink = buttons[section][i];
-				for (var x in groupLink.data) {
-					if (groupLink.data[x].name === 'cmdImage') {
-						cmdImageIndex = x;
-						break;
-					}
-				}
-			}
-		}
-	}
-
-	groupLink.data[cmdImageIndex] = {
+	group.data[buttonIndex] = {
 		name: 'cmdFilerFile',
 		title: 'Image/Video',
 		hotkey: 'Ctrl+G',
 		icon: {
-			glyph: 'glyphicon glyphicon-picture',
-			fa: 'fa fa-picture-o'
+			fa: 'fa fa-image'
 		},
 		callback: function(e) {
 			new FilerFileDialog(e);

@@ -1,23 +1,33 @@
 from django import forms
 
-from markymark.utils import initialize_renderer
+from markymark.renderer import initialize_renderer
 
 
 class MarkdownTextarea(forms.Textarea):
+    """
+    Extended forms Textarea which enables the javascript markdown editor.
+    """
+
     def __init__(self, *args, **kwargs):
-        super(MarkdownTextarea, self).__init__(*args, **kwargs)
+        """
+        Sets the required data attributes to enable the markdown editor.
+        """
+        super().__init__(*args, **kwargs)
         self.attrs['data-provide'] = 'markdown'
 
     def _media(self):
+        """
+        Returns a forms.Media instance with the basic editor media and media
+        from all registered extensions.
+        """
         media = forms.Media(
-            css={'all': (
-                'markdown/css/markdown-editor.css',
-                'markdown/css/markdown-editor-adminfix.css',
-            )},
-            js=(
-                'markdown/js/markdown.js',
-                'markdown/js/markdown-editor.js'
-            )
+            css={
+                'all': (
+                    'markymark/css/markdown-editor.css',
+                    'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
+                )
+            },
+            js=('markymark/js/markdown-editor.js',)
         )
 
         # Use official extension loading to initialize all extensions

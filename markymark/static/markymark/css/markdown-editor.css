@@ -4,13 +4,15 @@
  * @author Taufan Aditya @taufanaditya
  * @copyright 2013 Taufan Aditya
  */
-@font-face {
-  font-family: "markdown-editor";
-  src: url("../font/markdown-editor.eot");
-  src: url("../font/markdown-editor.eot#iefix") format("embedded-opentype"), url("../font/markdown-editor.woff") format("woff"), url("../font/markdown-editor.ttf") format("truetype"), url("../font/markdown-editor.svg#markdown-editor") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
+
+/* ==========================================================
+ * THIS IS A VENDOR-COPY WITH LOCAL CHANGES
+ *
+ *  - Fixes for Django admin (.module prefixed styles)
+ *  - Removed glyphicon styles
+ * ========================================================== */
+
+
 .md-editor {
   display: block;
   border: 1px solid #dddddd;
@@ -175,57 +177,40 @@
 .md-editor .btn.hidden {
   display: none;
 }
-.md-editor .glyphicon:before {
-  font-family: "markdown-editor";
-}
-.md-editor .glyphicon-bold:before {
-    content: '\e800';
-}
-.md-editor .glyphicon-italic:before {
-    content: '\e801';
-}
-.md-editor .glyphicon-header:before {
-    content: '\e802';
-}
-.md-editor .glyphicon-picture:before {
-    content: '\e803';
-}
-.md-editor .glyphicon-list-bullet:before {
-    content: '\e804';
-}
-.md-editor .glyphicon-list-numbered:before {
-    content: '\e805';
-}
-.md-editor .glyphicon-asterisk:before {
-    content: '\e806';
-}
-.md-editor .glyphicon-comment:before {
-    content: '\e807';
-}
-.md-editor .glyphicon-search:before {
-    content: '\e808';
-}
-.md-editor .glyphicon-minus:before {
-    content: '\e809';
-}
-.md-editor .glyphicon-bug:before {
-    content: '\e80a';
-}
-.md-editor .glyphicon-fullscreen-on:before {
-    content: '\e80b';
-}
-.md-editor .glyphicon-fullscreen-off:before {
-    content: '\e80c';
-}
-.md-editor .glyphicon-link:before {
-    content: '\e80d';
-}
-.md-editor .glyphicon-table:before {
-    content: '\f0ce';
-}
 
 .md-nooverflow {
   overflow: hidden;
   position: fixed;
   width: 100%;
+}
+
+.module .md-editor {
+	margin-left: 170px;
+	width: 620px;
+}
+.module.wide .md-editor {
+	margin-left: 210px;
+	width: 460px;
+}
+
+.module .md-editor textarea {
+	box-sizing: border-box;
+	padding: 5px 6px;
+}
+
+body.djangocms-admin-style .md-editor {
+	margin-left: inherit !important;
+	width: auto !important;
+}
+
+body.djangocms-admin-style .md-editor .btn {
+    padding: 5px 10px !important;
+}
+
+body.djangocms-admin-style .md-editor > textarea {
+    border-radius: 0 !important;
+    width: 100% !important;
+	border-left: 0 !important;
+	border-right: 0 !important;
+	border-bottom: 0 !important;
 }

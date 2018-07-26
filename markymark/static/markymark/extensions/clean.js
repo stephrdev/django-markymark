@@ -1,24 +1,9 @@
 (function($) {
-	var groups = $.fn.markdown.defaults.additionalButtons,
-		groupPlugins;
+	var group = $.fn.markdown.defaults.buttons[0].filter(function(group) {
+		return group.name == 'groupUtil';
+	})[0];
 
-	for (var i in groups) {
-		if (groups[i].name === 'groupPlugins') {
-			groupPlugins = groups[i];
-			break;
-		}
-	}
-
-	if (!groupPlugins) {
-		groupPlugins = {
-			name: 'groupPlugins',
-			data: []
-		};
-
-		$.fn.markdown.defaults.additionalButtons.push(groupPlugins);
-	}
-
-	function cleanText (text) {
+	function cleanText(text) {
 		var
 			// \u2028, \u2029 are newlines defined by unicode spec, \u0085 is
 			// used by some very old machines, better safe than sorry!
@@ -39,11 +24,11 @@
 		return replacement;
 	};
 
-	groupPlugins.data.push({
+	group.data.push({
 		name: 'cmdClean',
 		title: 'Clean',
 		icon: {
-			glyph: 'glyphicon glyphicon-bug',
+			fa: 'fa fa-bug',
 		},
 		callback: function(e) {
 			// Replace selection with cleaned text.
