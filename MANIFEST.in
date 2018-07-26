@@ -1,11 +1,4 @@
-include README.rst
-include LICENSE
-include setup.cfg
-
-recursive-include docs/source/ *
-recursive-include markymark/static *
-recursive-include markymark/templates *
-
-recursive-exclude * *.pyc
-recursive-exclude * *.pyo
-global-exclude .DS_Store
+include LICENSE.rst
+recursive-exclude * .DS_Store
+recursive-exclude examples *
+recursive-exclude tests *

@@ -1,92 +1,40 @@
 import os
-import sys
-import codecs
+from codecs import open
+
 from setuptools import setup, find_packages
 
 
-version = '1.1.0'
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+VERSION = __import__('markymark').__version__
 
 
-if sys.argv[-1] == 'publish':
-    os.system('python setup.py sdist upload')
-    os.system('python setup.py bdist_wheel upload')
-    print('You probably want to also tag the version now:')
-    print('  git tag -a %s -m "version %s"' % (version, version))
-    print('  git push --tags')
-    sys.exit()
-
-
-def read(*parts):
-    filename = os.path.join(os.path.dirname(__file__), *parts)
-    with codecs.open(filename, encoding='utf-8') as fp:
-        return fp.read()
-
-
-install_requirements = [
-    'django>=1.6,<1.10',
-    'Markdown>=2.6,<2.7',
-]
-
-
-test_requirements = [
-    'tox',
-    'tox-pyenv',
-    'pytest==2.8.0',
-    'pytest-cache==1.0',
-    'pytest-cov==2.1.0',
-    'pytest-django==2.8.0',
-    'pytest-flakes==1.0.1',
-    'pytest-pep8==1.0.6',
-    'cov-core==1.15.0',
-    'mock==1.3.0',
-    'factory-boy==2.5.2',
-    'django-filer<1.3.0',
-    'django-anylink',
-]
+with open(os.path.join(BASE_DIR, 'README.rst'), encoding='utf-8') as f:
+    long_description = f.read()
 
 
 setup(
     name='django-markymark',
-    version=version,
-    description=(
-        'django-markymark provides helpers and tools to integrate markdown '
-        'into your editor.'),
-    long_description=read('README.rst'),
+    version=VERSION,
+    description='django-markymark provides helpers and tools to integrate markdown.',
+    long_description=long_description,
+    url='https://github.com/moccu/django-markymark',
+    project_urls={
+        'Bug Reports': 'https://github.com/moccu/django-markymark/issues',
+        'Source': 'https://github.com/moccu/django-markymark',
+    },
     author='Moccu GmbH & Co. KG',
     author_email='info@moccu.com',
-    url='https://github.com/moccu/django-markymark/',
-    packages=find_packages(exclude=[
-        'testing',
-        'testing.pytests',
-        'testing.pytests.factories',
-        'examples',
-        'examples.example',
-        'examples.example.app',
-    ]),
-    install_requires=install_requirements,
-    extras_require={
-        'tests': test_requirements,
-        'filer': ['django-filer>=1.2.0,<1.3.0', ],
-        'anylink': ['django-anylink', ],
-    },
+    packages=find_packages(exclude=['tests', 'tests.*', 'examples', 'examples.*']),
+    install_requires=['Markdown'],
     include_package_data=True,
-    license='Apache License (2.0)',
-    keywords=['markdown', 'django'],
+    keywords='django markdown',
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Web Environment',
-        'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache Software License',
-        'Operating System :: OS Independent',
-        'Topic :: Software Development :: Libraries :: Python Modules',
         'Framework :: Django',
-        'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
+        'Intended Audience :: Developers',
+        'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: Implementation :: CPython',
+        'Programming Language :: Python :: 3.6',
     ],
-    zip_safe=False,
 )

@@ -1,37 +1,19 @@
-sudo: false
 language: python
 
 python:
-  - '2.7'
-  - '3.4'
-  - '3.5'
+  - "3.6"
 
 env:
-  - DJANGO_VERSION=1.9.x
-  - DJANGO_VERSION=1.8.x
-  - DJANGO_VERSION=1.7.x
-  - DJANGO_VERSION=1.6.x
-
-matrix:
-  exclude:
-  - python: '3.4'
-    env: DJANGO_VERSION=1.6.x
-  - python: '3.5'
-    env: DJANGO_VERSION=1.6.x
-  - python: '3.5'
-    env: DJANGO_VERSION=1.7.x
+  - DEPS="Django>=1.11,<1.12"
+  - DEPS="Django>=2.0,<2.1"
 
 install:
-  - pip install tox
+  - pip install pipenv codecov
+  - pipenv install --dev
+  - pipenv run pip install -e .
+  - pipenv run pip install $DEPS
 
-script:
-  - tox -e "$TRAVIS_PYTHON_VERSION-$DJANGO_VERSION"
+script: pipenv run py.test --cov
 
 after_success:
-  - pip install coveralls coverage
-  - coverage report
-  - coveralls
-
-notifications:
-  slack:
-    secure: Qxk4M7M6GsTHmsA6M8jHQTPHaLWn7ayPLLUdoTvyAeA6sh/31Qk2ntv8NhE+3YX0epsDvX/Q1iFjKl/2BHKB2iaNYeeGf7QUOIVAwbinsrwUr1vDzE1oOrddRkheYg9+c8rMkNmZZjJHbMne0p3U5sKbDLoWJwxsTwrRv+4BmdI=
+  - codecov

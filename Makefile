@@ -1,39 +1,28 @@
-.PHONY: tests coverage coverage-html devinstall tox docs clean
-APP=markymark/
-OPTS=
+.PHONY: clean tests cov docs runserver release
 
-help:
-	@echo "tests - run all tests"
-	@echo "coverage - run all tests with coverage enabled"
-	@echo "coverage-html - run all tests with coverage html export enabled"
-	@echo "devinstall - install all packages required for development"
-	@echo "docs - generate Sphinx HTML documentation, including API docs"
-	@echo "clean-build - Clean build related files"
+VERSION = $(shell python -c "print(__import__('markymark').__version__)")
+
+clean:
+	rm -fr docs/_build build/ dist/
+	pipenv run make -C docs clean
 
 tests:
-	py.test ${OPTS} testing/pytests
+	pipenv run py.test --cov
 
-coverage:
-	py.test ${OPTS} --cov=${APP} --cov-report=term-missing testing/pytests
+cov: tests
+	pipenv run coverage html
+	@echo open htmlcov/index.html
 
-coverage-html:
-	py.test ${OPTS} --cov=${APP} --cov-report=term-missing --cov-report=html testing/pytests
+docs:
+	pipenv run make -C docs linkcheck html
+	@echo open docs/_build/html/index.html
 
-devinstall:
-	pip install -e .
-	pip install -e .[tests]
-	pip install -r requirements-docs.txt
+runserver:
+	pipenv run examples/manage.py runserver
 
-docs: clean-build
-	pip install -e .
-	pip install -r requirements-docs.txt
-	sphinx-apidoc --force -o docs/source/modules/ markymark markymark/settings.py testing/pytests/
-	$(MAKE) -C docs clean
-	$(MAKE) -C docs html
+release:
+	@echo About to release ${VERSION}; read
+	pipenv run python setup.py sdist upload
+	python setup.py bdist_wheel upload
+	git tag -a "${VERSION}" -m "Version ${VERSION}" && git push --follow-tags
 
-clean-build:
-	@rm -fr build/
-	@rm -fr dist/
-	@rm -fr *.egg-info src/*.egg-info
-	@rm -fr htmlcov/
-	$(MAKE) -C docs clean

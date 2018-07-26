@@ -1,6 +1,13 @@
 Changelog
 =========
 
+2.0.0 (TBD)
+------------------
+
+* Drop Python < 3 support
+* Drop Django < 1.11 support
+* Cleanup code and add some more documentation
+
 1.1.0 (2017-04-21)
 ------------------
 

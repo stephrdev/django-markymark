@@ -4,11 +4,11 @@
 coverage.xml
 .tox
 env/
-docs/build/
+docs/_build/
 .cache
+.pytest_cache
 *.egg
 *.egg-info
-markymark/tests/static/
 htmlcov/
 dist/
 examples/example/web/
