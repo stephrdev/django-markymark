@@ -30,9 +30,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'anylink',
-    'easy_thumbnails',
-    'filer',
     'markymark',
 
     'examples.app',
@@ -66,15 +63,12 @@ MIDDLEWARE = [
 ]
 
 MARKYMARK_EXTENSIONS = [
-    'markymark.extensions.autolink:AutoLinkExtension',
+    'markymark.extensions.autolink',
     'markdown.extensions.codehilite',
     'markdown.extensions.fenced_code',
     'markdown.extensions.tables'
 ]
 
-ANYLINK_EXTENSIONS = (
-    'anylink.extensions.ExternalLink',
-)
 
 ROOT_URLCONF = 'examples.urls'
 
