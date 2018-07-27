@@ -18,3 +18,17 @@ Default extensions:
     MARKYMARK_EXTENSIONS = [
         'markymark.extensions.autolink',
     ]
+
+
+.. py:data:: MARKYMARK_FONTAWESOME_CSS
+
+By default, the markdown editor uses FontAwesome to show some nice icons.
+FontAwesome is vendored and shipped with this library. You can override the
+path of the FontAwesome css file to use either the CDN version or something
+completly different.
+
+Default extensions:
+
+.. code-block:: python
+
+    MARKYMARK_FONTAWESOME_CSS = 'https://use.fontawesome.com/releases/v5.2.0/css/all.css'
