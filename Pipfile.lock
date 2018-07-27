@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "3a593d3ecbc6731cb0553e50f173651c2264561b79f2d07b691f3ce5f6c5665a"
+            "sha256": "d2e7e6ceae47e45091e80bae6d05c5d10782accc5c2d8e9cf0267e8a46d7023a"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,11 +18,11 @@
     "default": {
         "django": {
             "hashes": [
-                "sha256:b7f77c0d168de4c4ad30a02ae31b9dca04fb3c10472f04918d5c02b4117bba68",
-                "sha256:eb9271f0874f53106a2719c0c35ce67631f6cc27cf81a60c6f8c9817b35a3f6e"
+                "sha256:97886b8a13bbc33bfeba2ff133035d3eca014e2309dff2b6da0bdfc0b8656613",
+                "sha256:e900b73beee8977c7b887d90c6c57d68af10066b9dac898e1eaf0f82313de334"
             ],
             "index": "pypi",
-            "version": "==1.11.14"
+            "version": "==2.0.7"
         },
         "markdown": {
             "hashes": [
@@ -136,11 +136,11 @@
         },
         "django": {
             "hashes": [
-                "sha256:b7f77c0d168de4c4ad30a02ae31b9dca04fb3c10472f04918d5c02b4117bba68",
-                "sha256:eb9271f0874f53106a2719c0c35ce67631f6cc27cf81a60c6f8c9817b35a3f6e"
+                "sha256:97886b8a13bbc33bfeba2ff133035d3eca014e2309dff2b6da0bdfc0b8656613",
+                "sha256:e900b73beee8977c7b887d90c6c57d68af10066b9dac898e1eaf0f82313de334"
             ],
             "index": "pypi",
-            "version": "==1.11.14"
+            "version": "==2.0.7"
         },
         "django-anylink": {
             "hashes": [
@@ -385,11 +385,11 @@
         },
         "pytest-django": {
             "hashes": [
-                "sha256:088b66211c57972e7bd072ba73ccec1c3b6f6185f894b3b8eb966d2f3b7d46cb",
-                "sha256:3fea4d0a84bf3af1f1e82448b9a91b3ddb22b659d802e026ae843040da0c3220"
+                "sha256:434abfd2afe61b69a58af41e7339617f3aa33dc9a05e3b77fa5955204a61b865",
+                "sha256:a73e355138675db8f535777ddf34bde28580b688be17dc21d0efa65e5c16927c"
             ],
             "index": "pypi",
-            "version": "==3.3.2"
+            "version": "==3.3.3"
         },
         "pytest-flakes": {
             "hashes": [

@@ -1,5 +1,7 @@
 import tempfile
 
+import django
+
 
 DEBUG = True
 
@@ -14,16 +16,19 @@ DATABASES = {
 
 MIDDLEWARE_CLASSES = []
 
-INSTALLED_APPS = (
+INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
 
     'anylink',
     'easy_thumbnails',
-    'filer',
     'markymark',
-)
+]
+
+if django.VERSION[0] < 2:
+    INSTALLED_APPS.append('filer')
+
 
 TEMPLATES = [{
     'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -41,7 +46,9 @@ MEDIA_ROOT = tempfile.mkdtemp()
 
 MARKYMARK_EXTENSIONS = [
     'markymark.extensions.anylink',
-    'markymark.extensions.filer',
     'markymark.extensions.autolink',
     'markymark.extensions.clean',
 ]
+
+if django.VERSION[0] < 2:
+    MARKYMARK_EXTENSIONS.append('markymark.extensions.filer')

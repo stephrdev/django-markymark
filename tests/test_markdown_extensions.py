@@ -1,16 +1,18 @@
+import django
 import pytest
 from anylink.models import AnyLink
-from filer.models.filemodels import File
 
 from markymark.templatetags.markymark import markdown_filter
+from markymark.widgets import MarkdownTextarea
 
-from .factories.files import FileFactory, ImageFactory
 
-
+@pytest.mark.skipif(django.VERSION[0] >= 2, reason='Requires Django<2')
 @pytest.mark.django_db
 class TestFilerFileExtension:
 
     def setup(self):
+        from .factories.files import FileFactory, ImageFactory
+
         self.file = FileFactory.create()
         self.image = ImageFactory.create()
 
@@ -18,7 +20,9 @@ class TestFilerFileExtension:
         assert markdown_filter('foo [file:123 bar') == ('<p>foo [file:123 bar</p>')
 
     def test_file_not_found_debug(self, settings):
+        from filer.models.filemodels import File
         settings.DEBUG = True
+
         with pytest.raises(File.DoesNotExist):
             markdown_filter('[file:999]')
 
@@ -34,6 +38,11 @@ class TestFilerFileExtension:
         expected = '<p><img src="{0}" alt="{1}" title="{2}"></p>'.format(
             self.image.url, self.image.default_alt_text, self.image.default_caption)
         assert expected == markdown_filter('[file:{0}]'.format(self.image.pk))
+
+    def test_media(self):
+        widget = MarkdownTextarea()
+        assert 'markymark/extensions/filer.css' in widget.media._css['all']
+        assert 'markymark/extensions/filer.js' in widget.media._js
 
 
 @pytest.mark.django_db

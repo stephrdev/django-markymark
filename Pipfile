@@ -17,7 +17,7 @@ django-anylink = "*"
 django-filer = "*"
 
 [packages]
-django = "<2"
+django = "*"
 "Markdown" = "*"
 
 [requires]
