@@ -46,7 +46,7 @@ class TestFilerFileExtension:
 
 
 @pytest.mark.django_db
-class TestLinkExtension:
+class TestAnylinkExtension:
 
     def setup(self):
         self.link = AnyLink.objects.create(link_type='external_url', external_url='/test/')
@@ -95,3 +95,11 @@ class TestAutoLinkExtension:
         url = '<a href="http://www.example.com/">http://www.example.com/</a>'
         expected = '<p>{0}</p>'.format(url)
         assert expected == markdown_filter(url)
+
+    def test_dont_hijack_images(self):
+        md = '![](https://mirrors.creativecommons.org/presskit/icons/cc.large.png)'
+        expected = (
+            '<p><img alt="" src="https://mirrors.creativecommons.org/presskit/'
+            'icons/cc.large.png" /></p>'
+        )
+        assert markdown_filter(md) == expected

@@ -12,7 +12,7 @@ class AutoLinkPostprocessor(markdown.postprocessors.Postprocessor):
     Post processor to look for valid URIs and converts them to html links.
     """
     AUTOLINK_RE = re.compile((
-        r'(href="|<a.*>)?'
+        r'(href="|src="|<a.*>)?'
         r'(?:(https?|ftps?|file|ssh|mms|svn(?:\+ssh)?|git|dict|nntp|irc|'
         r'rsync|smb|apt|telnet|s?news|sips?|skype|apt)://|(mailto:))'
         r'([-A-Za-z0-9+&@#/%?=~_()|!:,.;]*[-A-Za-z0-9+&@#/%=~_()|])'
@@ -23,7 +23,7 @@ class AutoLinkPostprocessor(markdown.postprocessors.Postprocessor):
             prefix = match.group(1) or ''
 
             # Skip already rendered links/real html links.
-            if prefix == 'href="' or prefix.startswith('<a'):
+            if prefix in ('href="', 'src="') or prefix.startswith('<a'):
                 return match.group()
 
             if match.group(3) == 'mailto:':
