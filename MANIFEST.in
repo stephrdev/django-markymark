@@ -1,4 +1,6 @@
 include LICENSE.rst
+recursive-include markymark/templates *
+recursive-include markymark/static *
 recursive-exclude * .DS_Store
 recursive-exclude examples *
 recursive-exclude tests *

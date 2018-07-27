@@ -1,9 +1,10 @@
 Changelog
 =========
 
-2.0.0 (TBD)
+2.0.0 (2018-07-27)
 ------------------
 
+* THIS IS A BREAKING RELEASE, if you need Django < 1.11 please stick to the 1.1.0 release.
 * Drop Python < 3 support
 * Drop Django < 1.11 support
 * Cleanup code and add some more documentation
