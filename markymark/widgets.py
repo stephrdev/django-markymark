@@ -1,4 +1,5 @@
 from django import forms
+from django.conf import settings
 
 from markymark.renderer import initialize_renderer
 
@@ -20,13 +21,17 @@ class MarkdownTextarea(forms.Textarea):
         Returns a forms.Media instance with the basic editor media and media
         from all registered extensions.
         """
+        css = ['markymark/css/markdown-editor.css']
+        iconlibrary_css = getattr(
+            settings,
+            'MARKYMARK_FONTAWESOME_CSS',
+            'markymark/fontawesome/fontawesome.min.css'
+        )
+        if iconlibrary_css:
+            css.append(iconlibrary_css)
+
         media = forms.Media(
-            css={
-                'all': (
-                    'markymark/css/markdown-editor.css',
-                    'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
-                )
-            },
+            css={'all': css},
             js=('markymark/js/markdown-editor.js',)
         )
 
