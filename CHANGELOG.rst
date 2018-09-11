@@ -1,6 +1,12 @@
 Changelog
 =========
 
+2.1.0 (2018-09-11)
+------------------
+
+* Add setting to switch icon library for markdown editor to FontAwesome 4
+
+
 2.0.0 (2018-07-27)
 ------------------
 
@@ -9,10 +15,12 @@ Changelog
 * Drop Django < 1.11 support
 * Cleanup code and add some more documentation
 
+
 1.1.0 (2017-04-21)
 ------------------
 
 * add table support including new button in editor
+
 
 1.0.5 (2017-04-20)
 ------------------
@@ -20,11 +28,13 @@ Changelog
 * drop py26 support
 * Fix anylink pop up, make it more flexible for custom project urls
 
+
 1.0.4 (2017-02-21)
 ------------------
 
 * Fix styling when using markymark in inlines with django-cms / djangocms-admin-style
 * Force Pillow version for py26
+
 
 1.0.0 (2016-11-24)
 ------------------
