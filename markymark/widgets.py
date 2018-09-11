@@ -16,6 +16,9 @@ class MarkdownTextarea(forms.Textarea):
         super().__init__(*args, **kwargs)
         self.attrs['data-provide'] = 'markdown'
 
+        if hasattr(settings, 'MARKYMARK_ICONLIBRARY'):
+            self.attrs['data-iconlibrary'] = settings.MARKYMARK_ICONLIBRARY
+
     def _media(self):
         """
         Returns a forms.Media instance with the basic editor media and media

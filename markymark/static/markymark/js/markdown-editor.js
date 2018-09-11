@@ -1050,7 +1050,8 @@
           hotkey: 'Ctrl+B',
           title: 'Bold',
           icon: {
-            fa: 'fas fa-bold'
+            fa: 'fas fa-bold',
+            fa4: 'fa fa-bold'
           },
           callback: function(e) {
             // Give/remove ** surround the selection
@@ -1083,7 +1084,8 @@
           title: 'Italic',
           hotkey: 'Ctrl+I',
           icon: {
-            fa: 'fas fa-italic'
+            fa: 'fas fa-italic',
+            fa4: 'fa fa-italic'
           },
           callback: function(e) {
             // Give/remove * surround the selection
@@ -1116,7 +1118,8 @@
           title: 'Heading',
           hotkey: 'Ctrl+H',
           icon: {
-            fa: 'fas fa-heading'
+            fa: 'fas fa-heading',
+            fa4: 'fa fa-header'
           },
           callback: function(e) {
             // Append/remove ### surround the selection
@@ -1157,7 +1160,8 @@
           title: 'URL/Link',
           hotkey: 'Ctrl+L',
           icon: {
-            fa: 'fas fa-link'
+            fa: 'fas fa-link',
+            fa4: 'fa fa-link'
           },
           callback: function(e) {
             // Give [] surround the selection and prepend the link
@@ -1191,7 +1195,8 @@
           title: 'Image',
           hotkey: 'Ctrl+G',
           icon: {
-            fa: 'fas fa-image'
+            fa: 'fas fa-image',
+            fa4: 'fa fa-image'
           },
           callback: function(e) {
             // Give ![] surround the selection and prepend the image link
@@ -1231,7 +1236,8 @@
           hotkey: 'Ctrl+U',
           title: 'Unordered List',
           icon: {
-            fa: 'fas fa-list'
+            fa: 'fas fa-list',
+            fa4: 'fa fa-list'
           },
           callback: function(e) {
             // Prepend/Give - surround the selection
@@ -1279,7 +1285,8 @@
           hotkey: 'Ctrl+O',
           title: 'Ordered List',
           icon: {
-            fa: 'fas fa-list-ol'
+            fa: 'fas fa-list-ol',
+            fa4: 'fa fa-list-ol'
           },
           callback: function(e) {
 
@@ -1328,7 +1335,10 @@
           name: 'cmdTable',
           title: 'Table',
           hotkey: 'Ctrl+T',
-          icon: { fa: 'fa fa-table' },
+          icon: {
+            fa: 'fas fa-table',
+            fa4: 'fa fa-table'
+          },
           callback: function(e){
             // Insert sample table instead of selection
             var chunk, cursor, selected = e.getSelection(), content = e.getContent()
@@ -1353,7 +1363,8 @@
           hotkey: 'Ctrl+K',
           title: 'Code',
           icon: {
-            fa: 'fas fa-code'
+            fa: 'fas fa-code',
+            fa4: 'fa fa-code'
           },
           callback: function(e) {
             // Give/remove ** surround the selection
@@ -1394,7 +1405,8 @@
           hotkey: 'Ctrl+Q',
           title: 'Quote',
           icon: {
-            fa: 'fas fa-quote-left'
+            fa: 'fas fa-quote-left',
+            fa4: 'fa fa-quote-left'
           },
           callback: function(e) {
             // Prepend/Give - surround the selection
@@ -1449,7 +1461,8 @@
           btnText: 'Preview',
           btnClass: 'btn btn-primary btn-sm',
           icon: {
-            fa: 'fas fa-search'
+            fa: 'fas fa-search',
+            fa4: 'fa fa-search'
           },
           callback: function(e) {
             // Check the preview mode and toggle based on this flag
@@ -1478,13 +1491,15 @@
         fullscreenOn: {
           name: "fullscreenOn",
           icon: {
-            fa: 'fas fa-expand'
+            fa: 'fas fa-expand',
+            fa4: 'fa fa-expand'
           }
         },
         fullscreenOff: {
           name: "fullscreenOff",
           icon: {
-            fa: 'fas fa-compress'
+            fa: 'fas fa-compress',
+            fa4: 'fa fa-compress'
           }
         }
       }

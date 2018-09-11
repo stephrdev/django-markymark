@@ -28,7 +28,8 @@
 		name: 'cmdClean',
 		title: 'Clean',
 		icon: {
-			fa: 'fa fa-bug',
+			fa: 'fas fa-bug',
+			fa4: 'fa fa-bug'
 		},
 		callback: function(e) {
 			// Replace selection with cleaned text.

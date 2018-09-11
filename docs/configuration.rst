@@ -27,8 +27,19 @@ FontAwesome is vendored and shipped with this library. You can override the
 path of the FontAwesome css file to use either the CDN version or something
 completly different.
 
-Default extensions:
+.. code-block:: python
+
+    # Override default setting.
+    MARKYMARK_FONTAWESOME_CSS = 'https://use.fontawesome.com/releases/v5.2.0/css/all.css'
+
+
+.. py:data:: MARKYMARK_ICONLIBRARY
+
+By default, the markdown editor uses Font Awesome 5 compatible css classes for icons.
+In addition, you can change the used icon library to Font Awesome 4.
+
+To change the icon classes to Fa4, use this setting:
 
 .. code-block:: python
 
-    MARKYMARK_FONTAWESOME_CSS = 'https://use.fontawesome.com/releases/v5.2.0/css/all.css'
+    MARKYMARK_ICONLIBRARY = 'fa4'

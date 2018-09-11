@@ -120,7 +120,8 @@
 		title: 'Image/Video',
 		hotkey: 'Ctrl+G',
 		icon: {
-			fa: 'fa fa-image'
+			fa: 'fas fa-image',
+			fa4: 'fa fa-image'
 		},
 		callback: function(e) {
 			new FilerFileDialog(e);

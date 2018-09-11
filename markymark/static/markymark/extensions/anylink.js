@@ -12,7 +12,10 @@
 		name: 'cmdAnylinkLink',
 		title: 'Link',
 		hotkey: 'Ctrl+L',
-		icon: {fa: 'fa fa-link'},
+		icon: {
+			fa: 'fas fa-link',
+			fa4: 'fa fa-link'
+		},
 		callback: function(e) {
 			var
 				self = this,
