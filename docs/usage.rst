@@ -35,8 +35,10 @@ To run the tests, you need to install the test requirements with pip:
 
 .. code-block:: bash
 
-    $ pip install -e .[tests]
-
+    $ pipenv install --dev --python 3.6
+    $ pipenv shell
+    $ pip install -e .
+    $ exit
 
 Now you can run the tests from the root folder of the package:
 
