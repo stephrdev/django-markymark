@@ -1,4 +1,3 @@
-import django
 import pytest
 from anylink.models import AnyLink
 
@@ -6,7 +5,6 @@ from markymark.templatetags.markymark import markdown_filter
 from markymark.widgets import MarkdownTextarea
 
 
-@pytest.mark.skipif(django.VERSION[0] >= 2, reason='Requires Django<2')
 @pytest.mark.django_db
 class TestFilerFileExtension:
     def setup(self):

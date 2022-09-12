@@ -31,11 +31,11 @@ To display the rendered markdown in your template.
 Running tests
 -------------
 
-To run the tests, you need to install the test requirements with pip:
+To run the tests, you need to install the test requirements with Poetry:
 
 .. code-block:: bash
 
-    $ pip install -e .[tests]
+    $ poetry install
 
 
 Now you can run the tests from the root folder of the package:

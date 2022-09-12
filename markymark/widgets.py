@@ -16,10 +16,11 @@ class MarkdownTextarea(forms.Textarea):
         super().__init__(*args, **kwargs)
         self.attrs['data-provide'] = 'markdown'
 
-        if hasattr(settings, 'MARKYMARK_ICONLIBRARY'):
+        if getattr(settings, 'MARKYMARK_ICONLIBRARY', None):
             self.attrs['data-iconlibrary'] = settings.MARKYMARK_ICONLIBRARY
 
-    def _media(self):
+    @property
+    def media(self):
         """
         Returns a forms.Media instance with the basic editor media and media
         from all registered extensions.
@@ -41,5 +42,3 @@ class MarkdownTextarea(forms.Textarea):
             if hasattr(extension, 'media'):
                 media += extension.media
         return media
-
-    media = property(_media)

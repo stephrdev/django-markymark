@@ -2,7 +2,7 @@ import factory
 from filer.models import File, Image
 
 
-class FileFactory(factory.DjangoModelFactory):
+class FileFactory(factory.django.DjangoModelFactory):
     original_filename = 'file.data'
     file = factory.django.FileField(filename='file.data')
 
@@ -10,7 +10,7 @@ class FileFactory(factory.DjangoModelFactory):
         model = File
 
 
-class ImageFactory(factory.DjangoModelFactory):
+class ImageFactory(factory.django.DjangoModelFactory):
     original_filename = 'test.jpg'
     file = factory.django.ImageField(filename='test.jpg', color='blue')
     default_alt_text = 'test alt text'

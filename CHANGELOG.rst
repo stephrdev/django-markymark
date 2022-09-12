@@ -1,6 +1,13 @@
 Changelog
 =========
 
+3.0.0 (2022-09-12)
+------------------
+
+* Drop support for Django < 3.2, add support for 3.2
+* Drop support for Python < 3.8
+
+
 2.1.0 (2018-09-11)
 ------------------
 
@@ -48,7 +55,7 @@ Changelog
 0.9.3 (2016-10-05)
 ------------------
 
-* fix issue - `MarkdownField should handle widget instances as well #7 <https://github.com/moccu/django-markymark/issues/7>`_
+* fix issue - `MarkdownField should handle widget instances as well #7 <https://github.com/stephrdev/django-markymark/issues/7>`_
 * adjust install requirements to use 'official' python Markdown package
 * some improvements
 

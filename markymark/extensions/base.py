@@ -13,7 +13,7 @@ class MarkymarkExtension(markdown.Extension, metaclass=MediaDefiningClass):
     inlinepatterns = None
     postprocessors = None
 
-    def extendMarkdown(self, md, md_globals):
+    def extendMarkdown(self, md):
         """
         Every extension requires a extendMarkdown method to tell the markdown
         renderer how use the extension.
@@ -21,10 +21,10 @@ class MarkymarkExtension(markdown.Extension, metaclass=MediaDefiningClass):
         md.registerExtension(self)
 
         for processor in self.preprocessors or []:
-            md.preprocessors.add(processor.__name__.lower(), processor(md), '_end')
+            md.preprocessors.register(processor(md), processor.__name__.lower(), 0)
 
         for pattern in self.inlinepatterns or []:
-            md.inlinePatterns.add(pattern.__name__.lower(), pattern(md), '_end')
+            md.inlinePatterns.register(pattern(md), pattern.__name__.lower(), 0)
 
         for processor in self.postprocessors or []:
-            md.postprocessors.add(processor.__name__.lower(), processor(md), '_end')
+            md.postprocessors.register(processor(md), processor.__name__.lower(), 0)

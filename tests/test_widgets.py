@@ -6,6 +6,13 @@ class TestMarkdownTextarea:
         rendered = MarkdownTextarea().render('testfield', '')
         assert '<textarea' in rendered
         assert 'data-provide="markdown"' in rendered
+        assert 'data-iconlibrary' not in rendered
+
+    def test_attrs_iconlibrary(self, settings):
+        settings.MARKYMARK_ICONLIBRARY = 'fa5'
+
+        rendered = MarkdownTextarea().render('testfield', '')
+        assert 'data-iconlibrary="fa5"' in rendered
 
     def test_media(self):
         widget = MarkdownTextarea()

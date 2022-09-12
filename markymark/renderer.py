@@ -1,6 +1,6 @@
 import markdown
 from django.conf import settings
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 from django.utils.safestring import mark_safe
 
 
@@ -35,4 +35,4 @@ def render_markdown(value, extensions=None):
 
     The result is marked safe.
     """
-    return mark_safe(initialize_renderer(extensions).convert(force_text(value)))
+    return mark_safe(initialize_renderer(extensions).convert(force_str(value)))
