@@ -9,7 +9,6 @@ from markymark.widgets import MarkdownTextarea
 @pytest.mark.skipif(django.VERSION[0] >= 2, reason='Requires Django<2')
 @pytest.mark.django_db
 class TestFilerFileExtension:
-
     def setup(self):
         from .factories.files import FileFactory, ImageFactory
 
@@ -21,6 +20,7 @@ class TestFilerFileExtension:
 
     def test_file_not_found_debug(self, settings):
         from filer.models.filemodels import File
+
         settings.DEBUG = True
 
         with pytest.raises(File.DoesNotExist):
@@ -36,7 +36,8 @@ class TestFilerFileExtension:
 
     def test_image_render_success(self):
         expected = '<p><img src="{0}" alt="{1}" title="{2}"></p>'.format(
-            self.image.url, self.image.default_alt_text, self.image.default_caption)
+            self.image.url, self.image.default_alt_text, self.image.default_caption
+        )
         assert expected == markdown_filter('[file:{0}]'.format(self.image.pk))
 
     def test_media(self):
@@ -47,7 +48,6 @@ class TestFilerFileExtension:
 
 @pytest.mark.django_db
 class TestAnylinkExtension:
-
     def setup(self):
         self.link = AnyLink.objects.create(link_type='external_url', external_url='/test/')
 
@@ -65,12 +65,12 @@ class TestAnylinkExtension:
 
     def test_file_render_success(self):
         expected = '<p><a href="{0}" title="" target="_self"></a></p>'.format(
-            self.link.external_url)
+            self.link.external_url
+        )
         assert expected == markdown_filter('[link:{0}]'.format(self.link.pk))
 
 
 class TestAutoLinkExtension:
-
     def test_valid_http_link(self):
         url = 'https://www.youtube.com/watch?v=FTuFVwnrcts'
         expected = '<p><a href="{0}">{0}</a></p>'.format(url)

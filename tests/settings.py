@@ -20,7 +20,6 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
-
     'anylink',
     'easy_thumbnails',
     'markymark',
@@ -30,17 +29,17 @@ if django.VERSION[0] < 2:
     INSTALLED_APPS.append('filer')
 
 
-TEMPLATES = [{
-    'BACKEND': 'django.template.backends.django.DjangoTemplates',
-    'APP_DIRS': True,
-}]
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'APP_DIRS': True,
+    }
+]
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/'
 
-ANYLINK_EXTENSIONS = (
-    'anylink.extensions.ExternalLink',
-)
+ANYLINK_EXTENSIONS = ('anylink.extensions.ExternalLink',)
 
 MEDIA_ROOT = tempfile.mkdtemp()
 

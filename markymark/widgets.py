@@ -26,17 +26,12 @@ class MarkdownTextarea(forms.Textarea):
         """
         css = ['markymark/css/markdown-editor.css']
         iconlibrary_css = getattr(
-            settings,
-            'MARKYMARK_FONTAWESOME_CSS',
-            'markymark/fontawesome/fontawesome.min.css'
+            settings, 'MARKYMARK_FONTAWESOME_CSS', 'markymark/fontawesome/fontawesome.min.css'
         )
         if iconlibrary_css:
             css.append(iconlibrary_css)
 
-        media = forms.Media(
-            css={'all': css},
-            js=('markymark/js/markdown-editor.js',)
-        )
+        media = forms.Media(css={'all': css}, js=('markymark/js/markdown-editor.js',))
 
         # Use official extension loading to initialize all extensions
         # and hook in extension-defined media files.

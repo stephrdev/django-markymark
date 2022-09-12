@@ -8,6 +8,7 @@ class MarkymarkExtension(markdown.Extension, metaclass=MediaDefiningClass):
 
     Actually its just a markdown.Extension class with some media attached.
     """
+
     preprocessors = None
     inlinepatterns = None
     postprocessors = None
@@ -19,11 +20,11 @@ class MarkymarkExtension(markdown.Extension, metaclass=MediaDefiningClass):
         """
         md.registerExtension(self)
 
-        for processor in (self.preprocessors or []):
+        for processor in self.preprocessors or []:
             md.preprocessors.add(processor.__name__.lower(), processor(md), '_end')
 
-        for pattern in (self.inlinepatterns or []):
+        for pattern in self.inlinepatterns or []:
             md.inlinePatterns.add(pattern.__name__.lower(), pattern(md), '_end')
 
-        for processor in (self.postprocessors or []):
+        for processor in self.postprocessors or []:
             md.postprocessors.add(processor.__name__.lower(), processor(md), '_end')

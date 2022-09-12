@@ -2,7 +2,6 @@ from markymark.widgets import MarkdownTextarea
 
 
 class TestMarkdownTextarea:
-
     def test_attrs(self):
         rendered = MarkdownTextarea().render('testfield', '')
         assert '<textarea' in rendered

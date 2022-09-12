@@ -12,6 +12,7 @@ class FilerPostprocessor(markdown.postprocessors.Postprocessor):
     """
     Filer markdown extension for django-filer to show files and images.
     """
+
     FILE_RE = re.compile(r'(\[file\:(?P<id>\d+)\])', re.IGNORECASE)
 
     def run(self, text):
@@ -20,12 +21,8 @@ class FilerPostprocessor(markdown.postprocessors.Postprocessor):
             try:
                 obj = File.objects.get(pk=int(options['id']))
                 return render_to_string(
-                    getattr(
-                        settings,
-                        'MARKYMARK_TEMPLATE_FILER',
-                        'markymark/filer.html'
-                    ),
-                    {'file': obj.get_real_instance()}
+                    getattr(settings, 'MARKYMARK_TEMPLATE_FILER', 'markymark/filer.html'),
+                    {'file': obj.get_real_instance()},
                 ).strip()
 
             except (KeyError, File.DoesNotExist):
@@ -42,6 +39,7 @@ class FilerExtension(MarkymarkExtension):
     Extension to look for file tags, replaces them with html tags.
     In case of image, the image is added as img-tag, files are added as download links.
     """
+
     postprocessors = (FilerPostprocessor,)
 
     class Media:

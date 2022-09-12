@@ -12,6 +12,7 @@ class AnyLinkPostprocessor(markdown.postprocessors.Postprocessor):
     """
     Post processor to look for anylink link tags, replaces these tags with html links.
     """
+
     LINK_RE = re.compile(r'(\[link\:(?P<id>\d+)\])', re.IGNORECASE)
 
     def run(self, text):
@@ -20,12 +21,8 @@ class AnyLinkPostprocessor(markdown.postprocessors.Postprocessor):
             try:
                 link = AnyLink.objects.get(pk=int(options['id']))
                 return render_to_string(
-                    getattr(
-                        settings,
-                        'MARKYMARK_TEMPLATE_ANYLINK',
-                        'markymark/anylink.html'
-                    ),
-                    {'link': link}
+                    getattr(settings, 'MARKYMARK_TEMPLATE_ANYLINK', 'markymark/anylink.html'),
+                    {'link': link},
                 ).strip()
 
             except (KeyError, AnyLink.DoesNotExist):
@@ -41,6 +38,7 @@ class AnyLinkExtension(MarkymarkExtension):
     """
     Extension to insert django-anylink links into a markdown document.
     """
+
     postprocessors = (AnyLinkPostprocessor,)
 
     class Media:
