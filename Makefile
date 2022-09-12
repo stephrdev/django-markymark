@@ -18,6 +18,10 @@ pytests:
 tests:
 	@PYTHONPATH=$(CURDIR):${PYTHONPATH} poetry run pytest --cov --isort --flake8 --black
 
+demo:
+	@PYTHONPATH=$(CURDIR):${PYTHONPATH} poetry run python examples/manage.py migrate
+	@PYTHONPATH=$(CURDIR):${PYTHONPATH} poetry run python examples/manage.py runserver
+
 coverage-html: pytests
 	poetry run coverage html
 

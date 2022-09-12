@@ -69,6 +69,7 @@ MARKYMARK_EXTENSIONS = [
     'markdown.extensions.tables'
 ]
 
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ROOT_URLCONF = 'examples.urls'
 
