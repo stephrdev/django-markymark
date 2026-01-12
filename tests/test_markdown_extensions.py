@@ -7,6 +7,7 @@ from markymark.widgets import MarkdownTextarea
 
 @pytest.mark.django_db
 class TestFilerFileExtension:
+    @pytest.fixture(autouse=True)
     def setup(self):
         from .factories.files import FileFactory, ImageFactory
 
@@ -46,6 +47,7 @@ class TestFilerFileExtension:
 
 @pytest.mark.django_db
 class TestAnylinkExtension:
+    @pytest.fixture(autouse=True)
     def setup(self):
         self.link = AnyLink.objects.create(link_type='external_url', external_url='/test/')
 
