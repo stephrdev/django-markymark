@@ -50,6 +50,7 @@
   display: block;
   padding: 0;
   width: 100%;
+  background: var(--dca-white, #ffffff);
   border: 0;
   border-top: 1px dashed #dddddd;
   border-bottom: 1px dashed #dddddd;
@@ -185,22 +186,23 @@
 }
 
 .module .md-editor {
-	margin-left: 170px;
-	width: 620px;
+  margin-left: 170px;
+  width: 620px;
 }
 .module.wide .md-editor {
-	margin-left: 210px;
-	width: 460px;
+  margin-left: 210px;
+  width: 460px;
 }
 
 .module .md-editor textarea {
-	box-sizing: border-box;
-	padding: 5px 6px;
+  box-sizing: border-box;
+  padding: 5px 6px;
 }
 
 body.djangocms-admin-style .md-editor {
-	margin-left: inherit !important;
-	width: auto !important;
+  margin-left: inherit !important;
+  width: auto !important;
+  max-width: none !important;
 }
 
 body.djangocms-admin-style .md-editor .btn {
@@ -208,9 +210,9 @@ body.djangocms-admin-style .md-editor .btn {
 }
 
 body.djangocms-admin-style .md-editor > textarea {
-    border-radius: 0 !important;
-    width: 100% !important;
-	border-left: 0 !important;
-	border-right: 0 !important;
-	border-bottom: 0 !important;
+  border-radius: 0 !important;
+  width: 100% !important;
+  border-left: 0 !important;
+  border-right: 0 !important;
+  border-bottom: 0 !important;
 }

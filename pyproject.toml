@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-markymark"
-version = "4.0.0"
+version = "4.0.1"
 description = "django-markymark provides helpers and tools to integrate markdown."
 authors = [
 	"Stephan Jaekel <steph@rdev.info>",
