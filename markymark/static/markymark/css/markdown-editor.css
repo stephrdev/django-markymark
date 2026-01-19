@@ -21,7 +21,7 @@
 .md-editor .md-footer {
   display: block;
   padding: 6px 4px;
-  background: #f5f5f5;
+  background: var(--dca-gray-lightest, #f5f5f5);
 }
 .md-editor > .md-header {
   margin: 0;
@@ -56,11 +56,6 @@
   border-bottom: 1px dashed #dddddd;
   border-radius: 0;
   box-shadow: none;
-  background: #eeeeee;
-}
-.md-editor > textarea:focus {
-  box-shadow: none;
-  background: #ffffff;
 }
 .md-editor.active {
   border-color: #66afe9;
