@@ -69,6 +69,15 @@ class TestAnylinkExtension:
         )
         assert expected == markdown_filter('[link:{0}]'.format(self.link.pk))
 
+    def test_file_render_target_success(self):
+        self.link.target = '_blank'
+        self.link.save()
+        expected = (
+            '<p><a href="{0}" title="" target="_blank" '
+            'rel="noreferrer noopener"></a></p>'
+        ).format(self.link.external_url)
+        assert expected == markdown_filter('[link:{0}]'.format(self.link.pk))
+
 
 class TestAutoLinkExtension:
     def test_valid_http_link(self):

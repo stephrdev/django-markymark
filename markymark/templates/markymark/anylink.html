@@ -1,1 +1,1 @@
-<a href="{{ link.get_absolute_url }}" title="{{ link.title }}" target="{{ link.target }}">{{ link.text }}</a>
+<a href="{{ link.get_absolute_url }}" title="{{ link.title }}" target="{{ link.target }}"{% if link.target|lower == '_blank' %} rel="noreferrer noopener"{% endif %}>{{ link.text }}</a>
